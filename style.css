@@ -73,7 +73,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .column__body {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 50px 60px 10px 60px;
+	padding: 50px 0px 10px 0px;
 	width: 100%;
 	justify-content: center;
 }
