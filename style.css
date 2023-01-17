@@ -53,7 +53,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	flex-wrap: wrap;
 	justify-content: center;
 	text-align: center;
-	font-size: 45px;
+	font-size: 40px;
 	color: rgb(142 134 88);
 	margin-bottom: 15px;
 }
@@ -63,8 +63,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	flex-wrap: wrap;
 }
 .search input{
-	width: 85%;
-	height: 45px;
+	width: 80%;
+	height: 40px;
 	border: 2px solid rgb(187, 176, 115);
 	border-radius: 10px;
 	font-size: 20px;
@@ -87,9 +87,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .note-header{
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 10px;
 	font-weight: 900;
-	font-size: 30px;
+	font-size: 20px;
 	margin-bottom: 20px;
 }
 .note{
@@ -104,7 +103,9 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	width: 280px;
 }
 #note-text{
-	font-size: 20px;
+	
+
+	font-size: 18px;
 	font-style:italic;
 	line-height: 25px;
 }
@@ -125,11 +126,11 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 
 .note-edit img{
-	width: 25px;
+	width: 22px;
 	opacity: 50%;
 }
 .note-delete img{
-	width: 25px;
+	width: 22px;
 	opacity: 50%;
 }
 
@@ -145,16 +146,16 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	background-color: rgb(255, 240, 153);
 	height: 70%;
 	width: 100%;
-	font-size: 20px;
+	font-size: 18px;
 	font-style:italic;
 	line-height: 25px;
 }
 #note-title-input{
 	background-color: rgb(255, 240, 153);
-	height: 35px;
+	height: 30px;
 	width: 100%;
 	font-weight: 900;
-	font-size: 30px;
+	font-size: 20px;
 }
 
 /*---------BTN---------*/
