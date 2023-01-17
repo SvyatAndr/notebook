@@ -63,7 +63,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	flex-wrap: wrap;
 }
 .search input{
-	width: 70%;
+	width: 85%;
 	height: 45px;
 	border: 2px solid rgb(187, 176, 115);
 	border-radius: 10px;
