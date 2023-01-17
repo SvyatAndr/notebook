@@ -9,8 +9,8 @@ function createCart(title, text) {
 			<p id="note-title">${title}</p>
 			<textarea id="note-title-input" class="hidden">${title}</textarea>
 			<div class="note-btn">
-				<button class="note-edit"><img src="/img/edit.png" alt=""></button>
-				<button class="note-delete"><img src="/img/trash.png" alt=""></button>
+				<button class="note-edit">EDIT</button>
+				<button class="note-delete">DELETE</button>
 			</div>
 		</div>
 		<p id="note-text">${text}</p>
