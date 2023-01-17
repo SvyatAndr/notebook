@@ -54,7 +54,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	justify-content: center;
 	text-align: center;
 	font-size: 40px;
-	color: rgb(142 134 88);
+	color: rgb(104 98 64);;
 	margin-bottom: 15px;
 }
 .search{
@@ -135,10 +135,10 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 
 .note-edit img:hover{
-	opacity: 70%;
+	opacity: 75%;
 }
 .note-delete img:hover{
-	opacity: 70%;
+	opacity: 75%;
 }
 
 
