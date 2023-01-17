@@ -35,8 +35,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .container {
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	width: auto;
-    	min-height: 100%;
-    	height: auto;
+	min-height: 100%;
+	height: auto;
 	background-color: rgb(255, 244, 180);
 	display: flex;
 	flex-wrap: wrap;
@@ -54,7 +54,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	justify-content: center;
 	text-align: center;
 	font-size: 45px;
-	color: rgb(170, 160, 105);
+	color: rgb(142 134 88);
 	margin-bottom: 15px;
 }
 .search{
