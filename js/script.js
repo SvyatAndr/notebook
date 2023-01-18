@@ -121,12 +121,12 @@ function createNote(title, text, id) {
 
 	titleInputEL.addEventListener('input', (e) => {
 		titleEl.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText }, "notes")
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes")
 	});
 
 	textInputEL.addEventListener('input', (e) => {
 		textEl.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText }, "notes")
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes")
 	});
 
 	return noteEL;
