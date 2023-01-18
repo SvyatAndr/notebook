@@ -1,9 +1,92 @@
+//*---Utils
+const isBrowser = () => typeof window !== "undefined"
+
+const generateId = () => {
+	return Math.random().toString(16).slice(2);
+}
+
+//*---Local storage service
+const addItemToLocalStorage = (item, key) => {
+	let array = getLocalStorageState(key, [])
+	array.push(item)
+	saveLocalStorageState(key, array)
+}
+
+const removeItemFromLocalStorage = (item, key) => {
+	let array = getLocalStorageState(key, [])
+	let resultArray = array.filter((el) => el.id !== item.id)
+	saveLocalStorageState(key, resultArray)
+}
+
+const updateItemFromLocalStorage = (item, key) => {
+	let array = getLocalStorageState(key, [])
+	const updatedItems = array.map(el => {
+		if (el.id === item.id) {
+			return item;
+		}
+		return el;
+	});
+	saveLocalStorageState(key, updatedItems)
+}
+
+const saveLocalStorageState = (key, value) => {
+	if (!isBrowser()) {
+		return;
+	}
+	try {
+		localStorage.setItem(key, JSON.stringify(value));
+	} catch (e) {
+		console.log(e);
+	}
+}
+
+const getLocalStorageState = (key, defaultValue) => {
+	if (!isBrowser()) {
+		return defaultValue;
+	}
+	try {
+		const data = localStorage.getItem(key);
+		if (data) {
+			try {
+				return JSON.parse(data)
+			} catch (e) {
+				console.log(e);
+			}
+		}
+		return defaultValue;
+	} catch (e) {
+		console.log(e);
+	}
+	return defaultValue;
+}
+
+//*---Notes management
+const addItemToDom = (title, text, id) => {
+	const el = createNote(title, text, id);
+	notesEL.appendChild(el);
+}
+
+const addNewNote = (title, text) => {
+	const id = generateId()
+	addItemToDom(title, text, id)
+	addItemToLocalStorage({ id: id, title: title, text: text }, "notes")
+}
+
+const fetchNotes = () => {
+	const notes = getLocalStorageState("notes", [])
+	notes.forEach((note) => {
+		addItemToDom(note.title, note.text, note.id)
+	})
+}
+
 const notesEL = document.querySelector('.column__body');
 const addBtn = document.querySelector('.add__btn');
 
-function createCart(title, text) {
+function createNote(title, text, id) {
+
 	const noteEL = document.createElement('div');
 	noteEL.classList.add('note');
+	noteEL.setAttribute("id", id);
 	noteEL.innerHTML = `
 		<div class="note-header">
 			<p id="note-title">${title}</p>
@@ -27,27 +110,32 @@ function createCart(title, text) {
 	editBtn.addEventListener('click', (e) => {
 		titleEl.classList.toggle('hidden');
 		textEl.classList.toggle('hidden');
-
 		titleInputEL.classList.toggle('hidden');
 		textInputEL.classList.toggle('hidden');
 	});
 
 	deleteBtn.addEventListener('click', (e) => {
+		removeItemFromLocalStorage({ id: id }, "notes")
 		noteEL.remove();
 	});
 
 	titleInputEL.addEventListener('input', (e) => {
 		titleEl.innerText = e.target.value;
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText }, "notes")
 	});
 
 	textInputEL.addEventListener('input', (e) => {
 		textEl.innerText = e.target.value;
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText }, "notes")
 	});
 
 	return noteEL;
 }
 
+window.addEventListener('load', (e) => {
+	fetchNotes()
+});
+
 addBtn.addEventListener('click', (e) => {
-	const el = createCart("TITLE", "Text");
-	notesEL.appendChild(el);
+	addNewNote("TITLE", "Text");
 });
