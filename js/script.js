@@ -8,25 +8,25 @@ const generateId = () => {
 //*---Local storage service
 const addItemToLocalStorage = (item, key) => {
 	let array = getLocalStorageState(key, [])
-	array.push(item)
-	saveLocalStorageState(key, array)
+	array.push(item);
+	saveLocalStorageState(key, array);
 }
 
 const removeItemFromLocalStorage = (item, key) => {
-	let array = getLocalStorageState(key, [])
+	let array = getLocalStorageState(key, []);
 	let resultArray = array.filter((el) => el.id !== item.id)
-	saveLocalStorageState(key, resultArray)
+	saveLocalStorageState(key, resultArray);
 }
 
 const updateItemFromLocalStorage = (item, key) => {
-	let array = getLocalStorageState(key, [])
+	let array = getLocalStorageState(key, []);
 	const updatedItems = array.map(el => {
 		if (el.id === item.id) {
 			return item;
 		}
 		return el;
 	});
-	saveLocalStorageState(key, updatedItems)
+	saveLocalStorageState(key, updatedItems);
 }
 
 const saveLocalStorageState = (key, value) => {
@@ -48,7 +48,7 @@ const getLocalStorageState = (key, defaultValue) => {
 		const data = localStorage.getItem(key);
 		if (data) {
 			try {
-				return JSON.parse(data)
+				return JSON.parse(data);
 			} catch (e) {
 				console.log(e);
 			}
@@ -67,15 +67,15 @@ const addItemToDom = (title, text, id) => {
 }
 
 const addNewNote = (title, text) => {
-	const id = generateId()
-	addItemToDom(title, text, id)
-	addItemToLocalStorage({ id: id, title: title, text: text }, "notes")
+	const id = generateId();
+	addItemToDom(title, text, id);
+	addItemToLocalStorage({ id: id, title: title, text: text }, "notes");
 }
 
 const fetchNotes = () => {
-	const notes = getLocalStorageState("notes", [])
+	const notes = getLocalStorageState("notes", []);
 	notes.forEach((note) => {
-		addItemToDom(note.title, note.text, note.id)
+		addItemToDom(note.title, note.text, note.id);
 	})
 }
 
@@ -89,15 +89,15 @@ function createNote(title, text, id) {
 	noteEL.setAttribute("id", id);
 	noteEL.innerHTML = `
 		<div class="note-header">
-			<p id="note-title">${title}</p>
-			<textarea id="note-title-input" class="hidden">${title}</textarea>
+			<p id="note-title" >${title}</p>
+			<textarea id="note-title-input" class="hidden" maxlength="50" placeholder="Ваш заголовок">${title}</textarea>
 			<div class="note-btn">
 				<button class="note-edit"><img src="img/edit.png"></button>
 				<button class="note-delete"><img src="img/trash.png"></button>
 			</div>
 		</div>
 		<p id="note-text">${text}</p>
-		<textarea id="note-textarea" class="hidden">${text}</textarea>
+		<textarea id="note-textarea" class="hidden" maxlength="2000" placeholder="Ваш текст..." >${text}</textarea>
 	`;
 
 	const editBtn = noteEL.querySelector('.note-edit');
@@ -115,7 +115,7 @@ function createNote(title, text, id) {
 	});
 
 	deleteBtn.addEventListener('click', (e) => {
-		removeItemFromLocalStorage({ id: id }, "notes")
+		removeItemFromLocalStorage({ id: id }, "notes");
 		noteEL.remove();
 	});
 
@@ -133,9 +133,9 @@ function createNote(title, text, id) {
 }
 
 window.addEventListener('load', (e) => {
-	fetchNotes()
+	fetchNotes();
 });
 
 addBtn.addEventListener('click', (e) => {
-	addNewNote("TITLE", "Text");
+	addNewNote("Ваш заголовок", "Ваш текст...");
 });

@@ -43,7 +43,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	justify-content: center;
 }
 .project__body {
-	width: 1400px;
+	max-width: 1400px;
 }
 .project__header {
 	padding: 10px;
@@ -53,7 +53,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	flex-wrap: wrap;
 	justify-content: center;
 	text-align: center;
-	font-size: 40px;
+	font-size: 30px;
 	color: rgb(104 98 64);;
 	margin-bottom: 15px;
 }
@@ -63,13 +63,14 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	flex-wrap: wrap;
 }
 .search input{
-	width: 80%;
-	height: 40px;
+	width: 65%;
+	height: 30px;
 	border: 2px solid rgb(187, 176, 115);
 	border-radius: 10px;
-	font-size: 20px;
+	font-size: 16px;
 	box-shadow: 0px 0px 8px black;
 	background-color: rgb(255, 246, 199);
+	padding: 10px;
 }
 
 .column__body {
@@ -104,7 +105,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 #note-text{
 	
-
 	font-size: 18px;
 	font-style:italic;
 	line-height: 25px;
@@ -140,6 +140,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .note-delete img:hover{
 	opacity: 75%;
 }
+
 
 
 #note-textarea{
@@ -183,4 +184,39 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .add__btn:hover{
 	background-color: rgb(150, 140, 93);
 	color: rgb(255, 240, 153);
+}
+
+
+@media (max-width:600px){
+	.note{
+		width: 154px;
+		margin: 3px;
+	}
+	.note-header{
+		font-weight: 900;
+		font-size: 15px;
+		margin-bottom: 10px;
+	}
+	#note-text{
+		font-size: 12px;
+		line-height: 15px;
+	}
+	.note-edit img{
+		width: 15px;
+	}
+	.note-delete img{
+		width: 15px;
+	}
+	#note-textarea{
+		font-size: 12px;
+		line-height: 15px;
+	}
+	#note-title-input{
+		font-size: 15px;
+	}
+	.add__btn{
+		width: 50px;
+		height: 50px;
+		font-size: 50px;
+	}
 }
