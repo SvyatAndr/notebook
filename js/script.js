@@ -149,6 +149,7 @@ function createNote(title, text, id) {
 	return noteEL;
 }
 
+//Пошук
 function fSearch() {
 	const myInput = document.getElementById('myInput');
 	const filter = myInput.value.toUpperCase();
