@@ -128,13 +128,12 @@ function createNote(title, text, id) {
 	});
 
 	deleteBtn.addEventListener('click', (e) => {
-		let winDel = window.confirm("Ви дійсно хочете видалити нотатку?");
+		let winDel = confirm("Ви дійсно хочете видалити нотатку?");
 
 		if (winDel === true) {
 			removeItemFromLocalStorage({ id: id }, "notes");
 			noteEL.remove();
 		}
-
 	});
 
 	titleInputEL.addEventListener('input', (e) => {
