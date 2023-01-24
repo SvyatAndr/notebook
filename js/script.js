@@ -1,5 +1,5 @@
 //*---Utils
-const isBrowser = () => typeof window !== "undefined"
+const isBrowser = () => typeof window !== "undefined";
 
 const generateId = () => {
 	return Math.random().toString(16).slice(2);
@@ -7,14 +7,14 @@ const generateId = () => {
 
 //*---Local storage service
 const addItemToLocalStorage = (item, key) => {
-	let array = getLocalStorageState(key, [])
+	let array = getLocalStorageState(key, []);
 	array.push(item);
 	saveLocalStorageState(key, array);
 }
 
 const removeItemFromLocalStorage = (item, key) => {
 	let array = getLocalStorageState(key, []);
-	let resultArray = array.filter((el) => el.id !== item.id)
+	let resultArray = array.filter((el) => el.id !== item.id);
 	saveLocalStorageState(key, resultArray);
 }
 
@@ -76,7 +76,7 @@ const fetchNotes = () => {
 	const notes = getLocalStorageState("notes", []);
 	notes.forEach((note) => {
 		addItemToDom(note.title, note.text, note.id);
-	})
+	});
 }
 
 const notesEL = document.querySelector('.column__body');
@@ -130,6 +130,23 @@ function createNote(title, text, id) {
 	});
 
 	return noteEL;
+}
+
+function fSearch() {
+	const myInput = document.getElementById('myInput');
+	const filter = myInput.value.toUpperCase();
+
+	const noteElement = notesEL.querySelectorAll('.note');
+	const qwer = notesEL.querySelectorAll('.note-header');
+
+	for (let i = 0; i < qwer.length; i++) {
+		const noteTitle = qwer[i].getElementsByTagName('p')[0];
+		if (noteTitle.innerHTML.toUpperCase().indexOf(filter) > -1) {
+			noteElement[i].style.display = "";
+		} else {
+			noteElement[i].style.display = "none";
+		}
+	}
 }
 
 window.addEventListener('load', (e) => {
