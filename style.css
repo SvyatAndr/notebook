@@ -185,3 +185,45 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	background-color: rgb(150, 140, 93);
 	color: rgb(255, 240, 153);
 }
+
+
+/* Повідомлення для підтвердження видалення */
+
+.messga-box{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%)
+}
+
+.del-win {
+	font-size: 20px;
+	font-weight: 900;
+	display: inline-block;
+	box-shadow: 3px 3px 10px black;
+	background-color: rgb(255, 240, 153);
+	border: 3px solid rgb(187, 176, 115);
+	padding: 10px;
+	margin: 8px;
+	border-radius: 10px;
+	width: 260px;
+	text-align: center;
+}
+.del-win-btn {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.del-win-btn button{
+	width: 105px;
+	font-weight: 900;
+	box-shadow: 0px 0px 8px black;
+	background-color: rgb(197, 186, 123);
+	border: 3px solid rgb(187, 176, 115);
+	border-radius: 10px;
+	padding: 5px;
+}

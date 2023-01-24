@@ -100,6 +100,19 @@ function createNote(title, text, id) {
 		<textarea id="note-textarea" class="hidden" maxlength="2000" placeholder="Ваш текст..." >${text}</textarea>
 	`;
 
+	// const delWinEL = document.createElement('div');
+	// delWinEL.classList.add('messga-box');
+	// delWinEL.innerHTML = `
+	// 	<div class="del-win">
+	// 		<p>Ви дійсно хочете видалити нотатку?</p>
+	// 		<div class="del-win-btn">
+	// 			<button>ТАК</button>
+	// 			<button>ВІДМІНИТИ</button>
+	// 		</div>
+	// 	</div>
+	// `;
+
+
 	const editBtn = noteEL.querySelector('.note-edit');
 	const deleteBtn = noteEL.querySelector('.note-delete');
 	const titleEl = noteEL.querySelector('#note-title');
@@ -115,8 +128,13 @@ function createNote(title, text, id) {
 	});
 
 	deleteBtn.addEventListener('click', (e) => {
-		removeItemFromLocalStorage({ id: id }, "notes");
-		noteEL.remove();
+		let winDel = window.confirm("Ви дійсно хочете видалити нотатку?");
+
+		if (winDel === true) {
+			removeItemFromLocalStorage({ id: id }, "notes");
+			noteEL.remove();
+		}
+
 	});
 
 	titleInputEL.addEventListener('input', (e) => {
