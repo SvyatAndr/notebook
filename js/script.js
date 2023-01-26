@@ -91,14 +91,22 @@ function createNote(title, text, id) {
 		<div class="note-header">
 			<p id="note-title" >${title}</p>
 			<textarea id="note-title-input" class="hidden" maxlength="50" placeholder="Ваш заголовок">${title}</textarea>
-			<div class="note-btn">
-				<button class="note-edit"><img src="img/edit.png"></button>
-				<button class="note-delete"><img src="img/trash.png"></button>
+			<div class="note-btn" id="opacity" >
+				<button id="opacity" class="note-edit"><img src="img/edit.png"></button>
+				<button id="opacity" class="note-delete"><img src="img/trash.png"></button>
 			</div>
 		</div>
 		<p id="note-text">${text}</p>
 		<textarea id="note-textarea" class="hidden" maxlength="2000" placeholder="Ваш текст..." >${text}</textarea>
 	`;
+
+	const elem = noteEL.querySelector('#opacity');
+	noteEL.onmouseover = function () {
+		elem.style.display = "flex";
+	};
+	noteEL.onmouseleave = function () {
+		elem.style.display = "none";
+	};
 
 	// const delWinEL = document.createElement('div');
 	// delWinEL.classList.add('messga-box');

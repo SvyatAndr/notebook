@@ -89,7 +89,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	display: flex;
 	justify-content: space-between;
 	font-weight: 900;
-	font-size: 20px;
+	font-size: 22px;
 	margin-bottom: 20px;
 }
 .note{
@@ -104,7 +104,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	width: 280px;
 }
 #note-text{
-	
 	font-size: 18px;
 	font-style:italic;
 	line-height: 25px;
@@ -113,6 +112,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .note-btn{
 	display: flex;
 	align-items: center;
+	display: none;
 }
 
 .note-edit{
