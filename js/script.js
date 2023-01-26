@@ -108,18 +108,35 @@ function createNote(title, text, id) {
 		elem.style.display = "none";
 	};
 
-	// const delWinEL = document.createElement('div');
-	// delWinEL.classList.add('messga-box');
-	// delWinEL.innerHTML = `
-	// 	<div class="del-win">
-	// 		<p>Ви дійсно хочете видалити нотатку?</p>
-	// 		<div class="del-win-btn">
-	// 			<button>ТАК</button>
-	// 			<button>ВІДМІНИТИ</button>
-	// 		</div>
-	// 	</div>
-	// `;
 
+	function deleteNoteWindow() {
+		const delWinEL = document.createElement('div');
+		delWinEL.classList.add('messga-box');
+		delWinEL.innerHTML = `
+		<div class="del-win">
+			<p>Ви дійсно хочете видалити нотатку?</p>
+			<div class="del-win-btn">
+				<button class = "yesBtn">ТАК</button>
+				<button class = "dontdelBtn">ВІДМІНИТИ</button>
+			</div>
+		</div>
+	`;
+
+		const yesBtn = delWinEL.querySelector('.yesBtn');
+		const dontdelBtn = delWinEL.querySelector('.dontdelBtn');
+
+		yesBtn.addEventListener('click', (e) => {
+			removeItemFromLocalStorage({ id: id }, "notes");
+			noteEL.remove();
+			delWinEL.remove();
+		});
+
+		dontdelBtn.addEventListener('click', (e) => {
+			delWinEL.remove();
+		});
+
+		return delWinEL;
+	}
 
 	const editBtn = noteEL.querySelector('.note-edit');
 	const deleteBtn = noteEL.querySelector('.note-delete');
@@ -136,22 +153,23 @@ function createNote(title, text, id) {
 	});
 
 	deleteBtn.addEventListener('click', (e) => {
-		let winDel = confirm("Ви дійсно хочете видалити нотатку?");
-
-		if (winDel === true) {
-			removeItemFromLocalStorage({ id: id }, "notes");
-			noteEL.remove();
-		}
+		// let winDel = confirm("Ви дійсно хочете видалити нотатку?");
+		// if (winDel === true) {
+		// 	removeItemFromLocalStorage({ id: id }, "notes");
+		// 	noteEL.remove();
+		// }
+		const el = deleteNoteWindow();
+		notesEL.appendChild(el);
 	});
 
 	titleInputEL.addEventListener('input', (e) => {
 		titleEl.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes")
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
 	});
 
 	textInputEL.addEventListener('input', (e) => {
 		textEl.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes")
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
 	});
 
 	return noteEL;
