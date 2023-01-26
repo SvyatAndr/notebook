@@ -142,7 +142,13 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 
 
-
+#note-title-input{
+	background-color: rgb(255, 240, 153);
+	height: 30px;
+	width: 100%;
+	font-weight: 900;
+	font-size: 22px;
+}
 #note-textarea{
 	background-color: rgb(255, 240, 153);
 	height: 70%;
@@ -150,13 +156,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	font-size: 18px;
 	font-style:italic;
 	line-height: 25px;
-}
-#note-title-input{
-	background-color: rgb(255, 240, 153);
-	height: 30px;
-	width: 100%;
-	font-weight: 900;
-	font-size: 20px;
 }
 
 /*---------BTN---------*/
