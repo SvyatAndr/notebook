@@ -79,6 +79,7 @@ const fetchNotes = () => {
 	});
 }
 
+const conteiner = document.querySelector('.container');
 const notesEL = document.querySelector('.column__body');
 const addBtn = document.querySelector('.add__btn');
 
@@ -111,13 +112,15 @@ function createNote(title, text, id) {
 
 	function deleteNoteWindow() {
 		const delWinEL = document.createElement('div');
-		delWinEL.classList.add('messga-box');
+		delWinEL.classList.add('window-box');
 		delWinEL.innerHTML = `
-		<div class="del-win">
-			<p>Ви дійсно хочете видалити нотатку?</p>
-			<div class="del-win-btn">
-				<button class = "yesBtn">ТАК</button>
-				<button class = "dontdelBtn">ВІДМІНИТИ</button>
+		<div class = "messga-box">
+			<div class="del-win">
+				<p>Ви дійсно хочете видалити нотатку?</p>
+				<div class="del-win-btn">
+					<button class = "yesBtn">ТАК</button>
+					<button class = "dontdelBtn">ВІДМІНИТИ</button>
+				</div>
 			</div>
 		</div>
 	`;
@@ -159,7 +162,7 @@ function createNote(title, text, id) {
 		// 	noteEL.remove();
 		// }
 		const el = deleteNoteWindow();
-		notesEL.appendChild(el);
+		conteiner.appendChild(el);
 	});
 
 	titleInputEL.addEventListener('input', (e) => {

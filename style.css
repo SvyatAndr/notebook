@@ -188,13 +188,20 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 
 /* Повідомлення для підтвердження видалення */
 
+.window-box{
+	width: 100%;
+	min-height: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	background-color: rgba(0,0,0,.9);
+}
 .messga-box{
 	margin: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%)
+	position: fixed;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
 }
 
 .del-win {
@@ -207,7 +214,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	padding: 10px;
 	margin: 8px;
 	border-radius: 10px;
-	width: 260px;
+	width: 300px;
 	text-align: center;
 }
 .del-win p{
@@ -228,6 +235,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	border: 3px solid rgb(156, 148, 98);
 	border-radius: 8px;
 	padding: 5px;
+	font-size: 16px;
 }
 
 .del-win-btn button:hover{
