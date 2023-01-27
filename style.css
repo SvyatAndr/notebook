@@ -241,3 +241,96 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .del-win-btn button:hover{
 	background-color: rgb(255, 242, 166);
 }
+
+
+/* EDIT window */
+
+.win-note-header{
+	display: flex;
+	/* justify-content: space-between; */
+	flex-direction: column;
+	font-weight: 900;
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+
+.note-edit-window{
+	position: fixed;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	box-shadow: 3px 3px 10px black;
+	background-color: rgb(255, 240, 153);
+	border: 3px solid rgb(187, 176, 115);
+	padding: 15px;
+	border-radius: 10px;
+	min-height:98%;
+	height: auto;
+	width: 98%;
+}
+
+.div-btn{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+.win-note-btn{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	/* display: none; */
+}
+
+.win-note-exit{
+	background-color: rgb(255, 240, 153);
+	display: flex;
+	align-items:center;
+}
+.win-note-save{
+	margin-right: 20px;
+	background-color: rgb(255, 240, 153);
+}
+.win-note-delete{
+	
+	background-color: rgb(255, 240, 153);
+}
+
+.win-note-exit img{
+	width: 28px;
+	opacity: 50%;
+}
+.win-note-save img{
+	width: 28px;
+	opacity: 50%;
+}
+.win-note-delete img{
+	width: 28px;
+	opacity: 50%;
+}
+
+.win-note-exit:hover{
+	opacity: 75%;
+}
+.win-note-save img:hover{
+	opacity: 75%;
+}
+.win-note-delete img:hover{
+	opacity: 75%;
+}
+
+
+#win-note-title-input{
+	background-color: rgb(255, 240, 153);
+	height: 30px;
+	width: 100%;
+	font-weight: 900;
+	font-size: 22px;
+}
+#win-note-textarea{
+	background-color: rgb(255, 240, 153);
+	height: 530px;
+	width: 100%;
+	font-size: 18px;
+	font-style:italic;
+	line-height: 25px;
+}
