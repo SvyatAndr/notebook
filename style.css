@@ -108,11 +108,13 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	font-weight: 900;
 	font-size: 22px;
 	margin-bottom: 20px;
+	opacity: 90%;
 }
 #note-text{
 	font-size: 18px;
 	font-style:italic;
 	line-height: 25px;
+	opacity: 90%;
 }
 
 .note-btn{
