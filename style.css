@@ -53,7 +53,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	flex-wrap: wrap;
 	justify-content: center;
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 	color: rgb(104 98 64);;
 	margin-bottom: 15px;
 }
@@ -66,7 +66,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	width: 65%;
 	height: 30px;
 	border: 2px solid rgb(187, 176, 115);
-	border-radius: 8px;
+	border-radius: 6px;
 	font-size: 16px;
 	box-shadow: 0px 0px 8px black;
 	background-color: rgb(255, 246, 199);
@@ -78,7 +78,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	flex-direction: row-reverse;
 	flex-wrap: wrap-reverse;
 	justify-content: center;
-	padding: 20px 0px 20px 0px;
+	padding: 10px 0px 30px 0px;
 }
 
 /*---------CART---------*/
@@ -90,12 +90,12 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	box-shadow: 3px 3px 10px black;
+	box-shadow: 0px 0px 5px black;
 	background-color: rgb(255, 240, 153);
-	border: 3px solid rgb(187, 176, 115);
+	border: 2px solid rgb(187, 176, 115);
 	padding: 15px;
-	margin: 8px;
-	border-radius: 10px;
+	margin: 5px;
+	border-radius: 8px;
 	min-height: 200px;
 	height: auto;
 	width: 280px;
@@ -182,14 +182,14 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	bottom: 0;
 	right: 0;
 
-	margin: 4%;
-	width: 60px;
-	height: 60px;
-	font-size: 70px;
-	box-shadow: 2px 2px 10px black;
+	margin: 3%;
+	width: 50px;
+	height: 50px;
+	font-size: 50px;
+	box-shadow: 0px 0px 10px black;
 	background-color: rgb(255, 240, 153);
-	border: 3px solid rgb(187, 176, 115);
-	border-radius: 10px;
+	border: 2px solid rgb(187, 176, 115);
+	border-radius: 8px;
 	color: rgb(114, 107, 70);
 
 	display:flex;
@@ -199,7 +199,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 
 .add__btn:hover{
-	background-color: rgb(150, 140, 93);
+	background-color: rgb(163, 152, 100);
 	color: rgb(255, 240, 153);
 }
 
@@ -226,12 +226,11 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	font-size: 20px;
 	font-weight: 900;
 	display: inline-block;
-	box-shadow: 3px 3px 10px black;
 	background-color: rgb(255, 240, 153);
-	border: 3px solid rgb(133, 125, 82);
+	border: 2px solid rgb(133, 125, 82);
 	padding: 10px;
 	margin: 8px;
-	border-radius: 10px;
+	border-radius: 8px;
 	width: 300px;
 	text-align: center;
 }
@@ -248,16 +247,16 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 .del-win-btn button{
 	width: 105px;
 	font-weight: 900;
-	box-shadow: 0px 0px 8px black;
+	box-shadow: 0px 0px 5px rgb(0, 0, 0);
 	background-color: rgb(197, 186, 123);
-	border: 3px solid rgb(156, 148, 98);
-	border-radius: 8px;
+	border: 2px solid rgb(156, 148, 98);
+	border-radius: 6px;
 	padding: 5px;
 	font-size: 16px;
 }
 
 .del-win-btn button:hover{
-	background-color: rgb(255, 242, 166);
+	background-color: rgb(236, 223, 150);
 }
 
 
@@ -277,11 +276,10 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	left:50%;
 	top:50%;
 	transform:translate(-50%,-50%);
-	box-shadow: 3px 3px 10px black;
 	background-color: rgb(255, 240, 153);
-	border: 3px solid rgb(187, 176, 115);
+	border: 2px solid rgb(187, 176, 115);
 	padding: 15px;
-	border-radius: 10px;
+	border-radius: 8px;
 	min-height:98%;
 	height: auto;
 	width: 98%;
