@@ -240,7 +240,7 @@ function editWindow(title, text, id, noteEL, dateNote) {
 	});
 
 	skinBtn.addEventListener('click', (e) => {
-		const el = choicSkinWindow();
+		const el = choicSkinWindow(noteEL);
 		conteiner.appendChild(el);
 		// noteEditWin.style.backgroundColor = "lightblue";
 		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
@@ -271,7 +271,7 @@ function editWindow(title, text, id, noteEL, dateNote) {
 	return editWinEL;
 }
 
-function choicSkinWindow() {
+function choicSkinWindow(noteEL) {
 	const skinWin = document.createElement('div');
 	skinWin.classList.add('window-box');
 	skinWin.innerHTML = `
@@ -291,37 +291,46 @@ function choicSkinWindow() {
 	</div>
 `;
 
+	const noteEditWin = document.querySelector('.note-edit-window');
+
 	const redBtn = skinWin.querySelector('.red');
 	redBtn.addEventListener('click', (e) => {
 		console.log('red');
-		// noteEditWin.style.backgroundColor = "lightblue";
-		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
-		// noteEL.style.backgroundColor = "lightblue";
-		// noteEL.style.border = "2px solid rgb(140 140 255)";
+		noteEditWin.style.backgroundColor = "lightcoral";
+		noteEditWin.style.border = "2px solid rgb(173, 102, 102)";
+		noteEL.style.backgroundColor = "lightcoral";
+		noteEL.style.border = "2px solid rgb(173, 102, 102)";
+		skinWin.remove();
 	});
+
 	const blueBtn = skinWin.querySelector('.blue');
 	blueBtn.addEventListener('click', (e) => {
 		console.log('blue');
-		// noteEditWin.style.backgroundColor = "lightblue";
-		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
-		// noteEL.style.backgroundColor = "lightblue";
-		// noteEL.style.border = "2px solid rgb(140 140 255)";
+		noteEditWin.style.backgroundColor = "lightblue";
+		noteEditWin.style.border = "2px solid rgb(140 140 255)";
+		noteEL.style.backgroundColor = "lightblue";
+		noteEL.style.border = "2px solid rgb(140 140 255)";
+		skinWin.remove();
 	});
+
 	const greenBtn = skinWin.querySelector('.green');
 	greenBtn.addEventListener('click', (e) => {
 		console.log('green');
-		// noteEditWin.style.backgroundColor = "lightblue";
-		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
-		// noteEL.style.backgroundColor = "lightblue";
-		// noteEL.style.border = "2px solid rgb(140 140 255)";
+		noteEditWin.style.backgroundColor = "lightgreen";
+		noteEditWin.style.border = "2px solid rgb(118, 167, 118)";
+		noteEL.style.backgroundColor = "lightgreen";
+		noteEL.style.border = "2px solid rgb(118, 167, 118)";
+		skinWin.remove();
 	});
+
 	const pinkBtn = skinWin.querySelector('.pink');
 	pinkBtn.addEventListener('click', (e) => {
 		console.log('pink');
-		// noteEditWin.style.backgroundColor = "lightblue";
-		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
-		// noteEL.style.backgroundColor = "lightblue";
-		// noteEL.style.border = "2px solid rgb(140 140 255)";
+		noteEditWin.style.backgroundColor = "lightpink";
+		noteEditWin.style.border = "2px solid rgb(255, 156, 173)";
+		noteEL.style.backgroundColor = "lightpink";
+		noteEL.style.border = "2px solid rgb(255, 156, 173)";
+		skinWin.remove();
 	});
 
 	const dontBtn = skinWin.querySelector('.btn-dont');
