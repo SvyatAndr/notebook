@@ -125,7 +125,7 @@ function createNote(title, text, id, dateNote) {
 		// textEl.classList.toggle('hidden');
 		// titleInputEL.classList.toggle('hidden');
 		// textInputEL.classList.toggle('hidden');
-		const el = editWindow(title, text, id, noteEL);
+		const el = editWindow(title, text, id, noteEL, dateNote);
 		conteiner.appendChild(el);
 	});
 
@@ -198,24 +198,30 @@ function deleteNoteWindow(title, text, id, noteEL) {
 }
 
 // Вікно редагування нотатки
-function editWindow(title, text, id, noteEL) {
+function editWindow(title, text, id, noteEL, dateNote) {
 	const editWinEL = document.createElement('div');
 	editWinEL.classList.add('window-box');
 	editWinEL.innerHTML = `
 	<div class="note-edit-window">
-		<div class="win-note-header">
-			<div class="div-btn">
-				<button id="opacity" class="win-note-exit"><img src="img/arrow-left.png"></button>
-				<div class="win-note-btn" id="opacity" >
-					<button id="opacity" class="win-note-skin"><img src="img/skin.png"></button>
-					<button id="opacity" class="win-note-save"><img src="img/save.png"></button>
-					<button id="opacity" class="win-note-delete"><img src="img/trash.png"></button>
+		<div class="note-content">
+			<div class="win-note-header">
+				<div class="div-btn">
+					<button id="opacity" class="win-note-exit"><img src="img/arrow-left.png"></button>
+					<div class="win-note-btn" id="opacity" >
+						<button id="opacity" class="win-note-skin"><img src="img/skin.png"></button>
+						<button id="opacity" class="win-note-save"><img src="img/save.png"></button>
+						<button id="opacity" class="win-note-delete"><img src="img/trash.png"></button>
+					</div>
 				</div>
+				<textarea id="win-note-title-input"  maxlength="50" placeholder="Ваш заголовок">${title}</textarea>
 			</div>
-			<textarea id="win-note-title-input"  maxlength="50" placeholder="Ваш заголовок">${title}</textarea>
+
+			<textarea id="win-note-textarea"  maxlength="2000" placeholder="Ваш текст..." >${text}</textarea>
 		</div>
 
-	<textarea id="win-note-textarea"  maxlength="2000" placeholder="Ваш текст..." >${text}</textarea>
+		<div class = "date-box">
+			<p class="note-date">${dateNote}</p>
+		</div>
 	</div>
 `;
 
@@ -234,10 +240,12 @@ function editWindow(title, text, id, noteEL) {
 	});
 
 	skinBtn.addEventListener('click', (e) => {
-		noteEditWin.style.backgroundColor = "lightblue";
-		noteEditWin.style.border = "2px solid rgb(140 140 255)";
-		noteEL.style.backgroundColor = "lightblue";
-		noteEL.style.border = "2px solid rgb(140 140 255)";
+		const el = choicSkinWindow();
+		conteiner.appendChild(el);
+		// noteEditWin.style.backgroundColor = "lightblue";
+		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
+		// noteEL.style.backgroundColor = "lightblue";
+		// noteEL.style.border = "2px solid rgb(140 140 255)";
 	});
 
 	saveBtn.addEventListener('click', (e) => {
@@ -263,6 +271,67 @@ function editWindow(title, text, id, noteEL) {
 	return editWinEL;
 }
 
+function choicSkinWindow() {
+	const skinWin = document.createElement('div');
+	skinWin.classList.add('window-box');
+	skinWin.innerHTML = `
+	<div class="messga-box">
+		<div class="skin-win">
+			<p>Виберіть колір нотатки</p>
+			<div class="skin-win-btn">
+				<button class="red"><img class="img-note-skin" src="img/align-left.png"></button>
+				<button class="blue"><img class="img-note-skin" src="img/align-left.png"></button>
+				<button class="green"><img class="img-note-skin" src="img/align-left.png"></button>
+				<button class="pink"><img class="img-note-skin" src="img/align-left.png"></button>
+			</div>
+			<div class="skin-dont-btn">
+				<button class="btn-dont">ВІДМІНИТИ</button>
+			</div>
+		</div>
+	</div>
+`;
+
+	const redBtn = skinWin.querySelector('.red');
+	redBtn.addEventListener('click', (e) => {
+		console.log('red');
+		// noteEditWin.style.backgroundColor = "lightblue";
+		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
+		// noteEL.style.backgroundColor = "lightblue";
+		// noteEL.style.border = "2px solid rgb(140 140 255)";
+	});
+	const blueBtn = skinWin.querySelector('.blue');
+	blueBtn.addEventListener('click', (e) => {
+		console.log('blue');
+		// noteEditWin.style.backgroundColor = "lightblue";
+		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
+		// noteEL.style.backgroundColor = "lightblue";
+		// noteEL.style.border = "2px solid rgb(140 140 255)";
+	});
+	const greenBtn = skinWin.querySelector('.green');
+	greenBtn.addEventListener('click', (e) => {
+		console.log('green');
+		// noteEditWin.style.backgroundColor = "lightblue";
+		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
+		// noteEL.style.backgroundColor = "lightblue";
+		// noteEL.style.border = "2px solid rgb(140 140 255)";
+	});
+	const pinkBtn = skinWin.querySelector('.pink');
+	pinkBtn.addEventListener('click', (e) => {
+		console.log('pink');
+		// noteEditWin.style.backgroundColor = "lightblue";
+		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
+		// noteEL.style.backgroundColor = "lightblue";
+		// noteEL.style.border = "2px solid rgb(140 140 255)";
+	});
+
+	const dontBtn = skinWin.querySelector('.btn-dont');
+	dontBtn.addEventListener('click', (e) => {
+		skinWin.remove();
+	});
+
+
+	return skinWin;
+}
 //Пошук
 function fSearch() {
 	const myInput = document.getElementById('myInput');

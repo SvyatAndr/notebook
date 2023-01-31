@@ -165,9 +165,9 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	line-height: 25px;
 }
 
-/* .date-box{
-	
-} */
+.date-box{
+
+}
 
 .note-date{
 	font-size: 13px;
@@ -263,17 +263,11 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 
 
 /* EDIT window */
-
-.win-note-header{
-	display: flex;
-	/* justify-content: space-between; */
-	flex-direction: column;
-	font-weight: 900;
-	font-size: 22px;
-	margin-bottom: 20px;
-}
-
 .note-edit-window{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
 	position: fixed;
 	left:50%;
 	top:50%;
@@ -285,6 +279,15 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	min-height:98%;
 	height: auto;
 	width: 98%;
+}
+
+.win-note-header{
+	display: flex;
+	/* justify-content: space-between; */
+	flex-direction: column;
+	font-weight: 900;
+	font-size: 22px;
+	margin-bottom: 20px;
 }
 
 .div-btn{
@@ -356,9 +359,76 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 #win-note-textarea{
 	background-color: hsla(176, 100%, 53%, 0);
+	/* resize: none; */
 	height: 530px;
 	width: 100%;
 	font-size: 18px;
 	font-style:italic;
 	line-height: 25px;
+}
+.note-content{
+	height: 100%;
+	width: 100%;
+}
+
+/* Вікно вибору скіна нотатки */
+.skin-win {
+	font-size: 20px;
+	font-weight: 900;
+	display: inline-block;
+	box-shadow: 3px 3px 10px black;
+	background-color: rgb(255, 240, 153);
+	border: 3px solid rgb(187, 176, 115);
+	padding: 10px;
+	margin: 8px;
+	border-radius: 10px;
+	width: 260px;
+	text-align: center;
+}
+.skin-win-btn {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.skin-win-btn button{
+	margin-top: 20px;
+	width: 45px;
+	height: 45px;
+	font-weight: 900;
+	box-shadow: 0px 0px 8px black;
+	border-radius: 5px;
+}
+.red {
+	background-color: lightcoral;
+	border: 3px solid rgb(173, 102, 102);
+}
+.blue {
+	background-color: lightblue;
+	border: 3px solid rgb(130, 130, 211);
+}
+.green {
+	background-color: lightgreen;
+	border: 3px solid rgb(118, 167, 118);
+}
+.pink {
+	background-color: lightpink;
+	border: 3px solid rgb(255, 156, 173);
+}
+
+.img-note-skin{
+	width: 30px;
+	height: auto;
+	opacity: 70%;
+}
+.skin-dont-btn button{
+	margin: 10px 0px 0px 0px;
+	width: 100%;
+	font-weight: 900;
+	box-shadow: 0px 0px 8px black;
+	background-color: rgb(197, 186, 123);
+	border: 3px solid rgb(187, 176, 115);
+	border-radius: 5px;
+	padding: 5px;
 }
