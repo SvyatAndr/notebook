@@ -90,15 +90,17 @@ function createNote(title, text, id) {
 	noteEL.classList.add('note');
 	noteEL.setAttribute("id", id);
 	noteEL.innerHTML = `
-		<div class="note-header">
-			<p id="note-title" >${title}</p>
-			
-			<div class="note-btn" id="opacity" >
-				<button id="opacity" class="note-edit"><img src="img/edit.png"></button>
-				<button id="opacity" class="note-delete"><img src="img/trash.png"></button>
+		<div>
+			<div class="note-header">
+				<p id="note-title" >${title}</p>
+				<div class="note-btn" id="opacity" >
+					<button id="opacity" class="note-edit"><img src="img/edit.png"></button>
+					<button id="opacity" class="note-delete"><img src="img/trash.png"></button>
+				</div>
 			</div>
+			<p id="note-text">${text}</p>
 		</div>
-		<p id="note-text">${text}</p>
+		
 		<div class = "date-box">
 			<p class="note-date">${fDate()}</p>
 		</div>
