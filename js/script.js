@@ -3,20 +3,20 @@ const isBrowser = () => typeof window !== "undefined";
 
 const generateId = () => {
 	return Math.random().toString(16).slice(2);
-}
+};
 
 //*---Local storage service
 const addItemToLocalStorage = (item, key) => {
 	let array = getLocalStorageState(key, []);
 	array.push(item);
 	saveLocalStorageState(key, array);
-}
+};
 
 const removeItemFromLocalStorage = (item, key) => {
 	let array = getLocalStorageState(key, []);
 	let resultArray = array.filter((el) => el.id !== item.id);
 	saveLocalStorageState(key, resultArray);
-}
+};
 
 const updateItemFromLocalStorage = (item, key) => {
 	let array = getLocalStorageState(key, []);
@@ -27,7 +27,7 @@ const updateItemFromLocalStorage = (item, key) => {
 		return el;
 	});
 	saveLocalStorageState(key, updatedItems);
-}
+};
 
 const saveLocalStorageState = (key, value) => {
 	if (!isBrowser()) {
@@ -38,7 +38,7 @@ const saveLocalStorageState = (key, value) => {
 	} catch (e) {
 		console.log(e);
 	}
-}
+};
 
 const getLocalStorageState = (key, defaultValue) => {
 	if (!isBrowser()) {
@@ -58,31 +58,32 @@ const getLocalStorageState = (key, defaultValue) => {
 		console.log(e);
 	}
 	return defaultValue;
-}
+};
 
 //*---Notes management
 const addItemToDom = (title, text, id) => {
 	const el = createNote(title, text, id);
 	notesEL.appendChild(el);
-}
+};
 
 const addNewNote = (title, text) => {
 	const id = generateId();
 	addItemToDom(title, text, id);
 	addItemToLocalStorage({ id: id, title: title, text: text }, "notes");
-}
+};
 
 const fetchNotes = () => {
 	const notes = getLocalStorageState("notes", []);
 	notes.forEach((note) => {
 		addItemToDom(note.title, note.text, note.id);
 	});
-}
+};
 
 const conteiner = document.querySelector('.container');
 const notesEL = document.querySelector('.column__body');
 const addBtn = document.querySelector('.add__btn');
 
+// Фунція створення нотатки
 function createNote(title, text, id) {
 
 	const noteEL = document.createElement('div');
@@ -109,96 +110,6 @@ function createNote(title, text, id) {
 		elem.style.display = "none";
 	};
 
-
-	function deleteNoteWindow() {
-		const delWinEL = document.createElement('div');
-		delWinEL.classList.add('window-box');
-		delWinEL.innerHTML = `
-		<div class = "messga-box">
-			<div class="del-win">
-				<p>Ви дійсно хочете видалити нотатку?</p>
-				<div class="del-win-btn">
-					<button class = "yesBtn">ТАК</button>
-					<button class = "dontdelBtn">ВІДМІНИТИ</button>
-				</div>
-			</div>
-		</div>
-	`;
-
-		const yesBtn = delWinEL.querySelector('.yesBtn');
-		const dontdelBtn = delWinEL.querySelector('.dontdelBtn');
-
-		const editWinEL = document.querySelector('.window-box');
-
-		yesBtn.addEventListener('click', (e) => {
-			removeItemFromLocalStorage({ id: id }, "notes");
-			noteEL.remove();
-			delWinEL.remove();
-			editWinEL.remove();
-		});
-
-		dontdelBtn.addEventListener('click', (e) => {
-			delWinEL.remove();
-		});
-
-		return delWinEL;
-	}
-
-	function editWindow() {
-		const editWinEL = document.createElement('div');
-		editWinEL.classList.add('window-box');
-		editWinEL.innerHTML = `
-		<div class="note-edit-window">
-			<div class="win-note-header">
-				<div class="div-btn">
-					<button id="opacity" class="win-note-exit"><img src="img/arrow-left.png"></button>
-					<div class="win-note-btn" id="opacity" >
-						<button id="opacity" class="win-note-save"><img src="img/save.png"></button>
-						<button id="opacity" class="win-note-delete"><img src="img/trash.png"></button>
-					</div>
-				</div>
-				<textarea id="win-note-title-input"  maxlength="50" placeholder="Ваш заголовок">${title}</textarea>
-			</div>
-
-		<textarea id="win-note-textarea"  maxlength="2000" placeholder="Ваш текст..." >${text}</textarea>
-		</div>
-	`;
-
-		const exitBtn = editWinEL.querySelector('.win-note-exit');
-		const delNote = editWinEL.querySelector('.win-note-delete');
-		const saveBtn = editWinEL.querySelector('.win-note-save');
-		const titleInputEL = editWinEL.querySelector('#win-note-title-input');
-		const textInputEL = editWinEL.querySelector('#win-note-textarea');
-		const titleEl = noteEL.querySelector('#note-title');
-		const textEl = noteEL.querySelector('#note-text');
-
-		exitBtn.addEventListener('click', (e) => {
-			editWinEL.remove();
-		});
-
-		saveBtn.addEventListener('click', (e) => {
-			editWinEL.remove();
-		});
-
-		delNote.addEventListener('click', (e) => {
-			const el = deleteNoteWindow();
-			conteiner.appendChild(el);
-		});
-
-
-		titleInputEL.addEventListener('input', (e) => {
-			titleEl.innerText = e.target.value;
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
-		});
-
-		textInputEL.addEventListener('input', (e) => {
-			textEl.innerText = e.target.value;
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
-		});
-
-		return editWinEL;
-	}
-
 	const editBtn = noteEL.querySelector('.note-edit');
 	const deleteBtn = noteEL.querySelector('.note-delete');
 	// const titleEl = noteEL.querySelector('#note-title');
@@ -211,12 +122,12 @@ function createNote(title, text, id) {
 		// textEl.classList.toggle('hidden');
 		// titleInputEL.classList.toggle('hidden');
 		// textInputEL.classList.toggle('hidden');
-		const el = editWindow();
+		const el = editWindow(title, text, id, noteEL);
 		conteiner.appendChild(el);
 	});
 
 	deleteBtn.addEventListener('click', (e) => {
-		const el = deleteNoteWindow();
+		const el = deleteNoteWindow(title, text, id, noteEL);
 		conteiner.appendChild(el);
 	});
 
@@ -231,6 +142,98 @@ function createNote(title, text, id) {
 	// });
 
 	return noteEL;
+}
+
+// Вікно підтвердження видалення
+function deleteNoteWindow(title, text, id, noteEL) {
+	const delWinEL = document.createElement('div');
+	delWinEL.classList.add('window-box');
+	delWinEL.innerHTML = `
+	<div class = "messga-box">
+		<div class="del-win">
+			<p>Ви дійсно хочете видалити нотатку?</p>
+			<div class="del-win-btn">
+				<button class = "yesBtn">ТАК</button>
+				<button class = "dontdelBtn">ВІДМІНИТИ</button>
+			</div>
+		</div>
+	</div>
+`;
+
+	const yesBtn = delWinEL.querySelector('.yesBtn');
+	const dontdelBtn = delWinEL.querySelector('.dontdelBtn');
+	const editWinEL = document.querySelector('.window-box');
+
+	yesBtn.addEventListener('click', (e) => {
+		removeItemFromLocalStorage({ id: id }, "notes");
+		noteEL.remove();
+		delWinEL.remove();
+		if (editWinEL != null) {
+			editWinEL.remove();
+		}
+	});
+
+	dontdelBtn.addEventListener('click', (e) => {
+		delWinEL.remove();
+	});
+
+	return delWinEL;
+}
+
+// Вікно редагування нотатки
+function editWindow(title, text, id, noteEL) {
+	const editWinEL = document.createElement('div');
+	editWinEL.classList.add('window-box');
+	editWinEL.innerHTML = `
+	<div class="note-edit-window">
+		<div class="win-note-header">
+			<div class="div-btn">
+				<button id="opacity" class="win-note-exit"><img src="img/arrow-left.png"></button>
+				<div class="win-note-btn" id="opacity" >
+					<button id="opacity" class="win-note-save"><img src="img/save.png"></button>
+					<button id="opacity" class="win-note-delete"><img src="img/trash.png"></button>
+				</div>
+			</div>
+			<textarea id="win-note-title-input"  maxlength="50" placeholder="Ваш заголовок">${title}</textarea>
+		</div>
+
+	<textarea id="win-note-textarea"  maxlength="2000" placeholder="Ваш текст..." >${text}</textarea>
+	</div>
+`;
+
+	const exitBtn = editWinEL.querySelector('.win-note-exit');
+	const delNote = editWinEL.querySelector('.win-note-delete');
+	const saveBtn = editWinEL.querySelector('.win-note-save');
+	const titleInputEL = editWinEL.querySelector('#win-note-title-input');
+	const textInputEL = editWinEL.querySelector('#win-note-textarea');
+	const titleEl = noteEL.querySelector('#note-title');
+	const textEl = noteEL.querySelector('#note-text');
+
+	exitBtn.addEventListener('click', (e) => {
+		editWinEL.remove();
+	});
+
+	saveBtn.addEventListener('click', (e) => {
+		editWinEL.remove();
+	});
+
+	delNote.addEventListener('click', (e) => {
+		const el = deleteNoteWindow(title, text, id, noteEL);
+		conteiner.appendChild(el);
+	});
+
+
+	titleInputEL.addEventListener('input', (e) => {
+		titleEl.innerText = e.target.value;
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
+	});
+
+	textInputEL.addEventListener('input', (e) => {
+		textEl.innerText = e.target.value;
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
+	});
+
+	return editWinEL;
 }
 
 //Пошук
