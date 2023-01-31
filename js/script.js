@@ -220,9 +220,11 @@ function editWindow(title, text, id, noteEL) {
 	</div>
 `;
 
+	const noteEditWin = editWinEL.querySelector('.note-edit-window');
 	const exitBtn = editWinEL.querySelector('.win-note-exit');
 	const delNote = editWinEL.querySelector('.win-note-delete');
 	const saveBtn = editWinEL.querySelector('.win-note-save');
+	const skinBtn = editWinEL.querySelector('.win-note-skin');
 	const titleInputEL = editWinEL.querySelector('#win-note-title-input');
 	const textInputEL = editWinEL.querySelector('#win-note-textarea');
 	const titleEl = noteEL.querySelector('#note-title');
@@ -230,6 +232,17 @@ function editWindow(title, text, id, noteEL) {
 
 	exitBtn.addEventListener('click', (e) => {
 		editWinEL.remove();
+	});
+
+	skinBtn.addEventListener('click', (e) => {
+		noteEditWin.style.backgroundColor = "lightblue";
+		noteEditWin.style.border = "2px solid rgb(48, 48, 131)";
+		exitBtn.style.backgroundColor = "lightblue";
+		delNote.style.backgroundColor = "lightblue";
+		skinBtn.style.backgroundColor = "lightblue";
+		saveBtn.style.backgroundColor = "lightblue";
+		titleInputEL.style.backgroundColor = "lightblue";
+		textInputEL.style.backgroundColor = "lightblue";
 	});
 
 	saveBtn.addEventListener('click', (e) => {
