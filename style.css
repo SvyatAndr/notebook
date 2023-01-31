@@ -168,12 +168,11 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 } */
 
 .note-date{
-	font-size: 12px;
-	opacity: 20%;
+	font-size: 13px;
+	opacity: 25%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
-	font-weight: 900;
 	margin-top: 5px;
 }
 
