@@ -150,7 +150,10 @@ function createNote(title, text, id) {
 //Генарація дати
 function fDate() {
 	const nowDate = new Date();
-	const month = ['Січеня', 'Лютого', 'Березеня', 'Квітеня', 'Травеня', 'Червеня', 'Липеня', 'Серпеня', 'Вересеня', 'Жовтеня', 'Листопада', 'Груденя'];
+	const month = ['Січеня', 'Лютого', 'Березеня',
+		'Квітеня', 'Травеня', 'Червеня',
+		'Липеня', 'Серпеня', 'Вересеня',
+		'Жовтеня', 'Листопада', 'Груденя'];
 	const strDate = `${nowDate.getDate()} ${month[nowDate.getMonth()]} ${nowDate.getHours()}:${nowDate.getMinutes()}`;
 	console.log(strDate);
 
