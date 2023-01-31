@@ -99,7 +99,9 @@ function createNote(title, text, id) {
 			</div>
 		</div>
 		<p id="note-text">${text}</p>
-		
+		<div class = "date-box">
+			<p class="note-date">${fDate()}</p>
+		</div>
 	`;
 
 	const elem = noteEL.querySelector('#opacity');
@@ -141,7 +143,18 @@ function createNote(title, text, id) {
 	// 	updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
 	// });
 
+
 	return noteEL;
+}
+
+//Генарація дати
+function fDate() {
+	const nowDate = new Date();
+	const month = ['Січеня', 'Лютого', 'Березеня', 'Квітеня', 'Травеня', 'Червеня', 'Липеня', 'Серпеня', 'Вересеня', 'Жовтеня', 'Листопада', 'Груденя'];
+	const strDate = `${nowDate.getDate()} ${month[nowDate.getMonth()]} ${nowDate.getHours()}:${nowDate.getMinutes()}`;
+	console.log(strDate);
+
+	return strDate;
 }
 
 // Вікно підтвердження видалення
