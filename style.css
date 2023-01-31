@@ -63,7 +63,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	flex-wrap: wrap;
 }
 .search input{
-	width: 65%;
+	width: 100%;
+	max-width: 700px;
 	height: 30px;
 	border: 2px solid rgb(187, 176, 115);
 	border-radius: 6px;
@@ -78,7 +79,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	flex-direction: row-reverse;
 	flex-wrap: wrap-reverse;
 	justify-content: center;
-	padding: 10px 0px 30px 0px;
+	padding: 3px 0px 30px 0px;
 }
 
 /*---------CART---------*/
