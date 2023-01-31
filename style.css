@@ -307,6 +307,10 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	margin-right: 20px;
 	background-color: rgb(255, 240, 153);
 }
+.win-note-skin{
+	margin-right: 20px;
+	background-color: rgb(255, 240, 153);
+}
 .win-note-delete{
 	
 	background-color: rgb(255, 240, 153);
@@ -320,6 +324,10 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	width: 28px;
 	opacity: 50%;
 }
+.win-note-skin img{
+	width: 28px;
+	opacity: 50%;
+}
 .win-note-delete img{
 	width: 28px;
 	opacity: 50%;
@@ -329,6 +337,9 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	opacity: 75%;
 }
 .win-note-save img:hover{
+	opacity: 75%;
+}
+.win-note-skin img:hover{
 	opacity: 75%;
 }
 .win-note-delete img:hover{

@@ -208,6 +208,7 @@ function editWindow(title, text, id, noteEL) {
 			<div class="div-btn">
 				<button id="opacity" class="win-note-exit"><img src="img/arrow-left.png"></button>
 				<div class="win-note-btn" id="opacity" >
+					<button id="opacity" class="win-note-skin"><img src="img/skin.png"></button>
 					<button id="opacity" class="win-note-save"><img src="img/save.png"></button>
 					<button id="opacity" class="win-note-delete"><img src="img/trash.png"></button>
 				</div>
