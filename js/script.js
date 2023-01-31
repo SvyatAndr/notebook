@@ -61,21 +61,21 @@ const getLocalStorageState = (key, defaultValue) => {
 };
 
 //*---Notes management
-const addItemToDom = (title, text, id) => {
-	const el = createNote(title, text, id);
+const addItemToDom = (title, text, id, dateNote) => {
+	const el = createNote(title, text, id, dateNote);
 	notesEL.appendChild(el);
 };
 
-const addNewNote = (title, text) => {
+const addNewNote = (title, text, dateNote) => {
 	const id = generateId();
-	addItemToDom(title, text, id);
-	addItemToLocalStorage({ id: id, title: title, text: text }, "notes");
+	addItemToDom(title, text, id, dateNote);
+	addItemToLocalStorage({ id: id, title: title, text: text, dateNote: dateNote }, "notes");
 };
 
 const fetchNotes = () => {
 	const notes = getLocalStorageState("notes", []);
 	notes.forEach((note) => {
-		addItemToDom(note.title, note.text, note.id);
+		addItemToDom(note.title, note.text, note.id, note.dateNote);
 	});
 };
 
@@ -84,8 +84,7 @@ const notesEL = document.querySelector('.column__body');
 const addBtn = document.querySelector('.add__btn');
 
 // Фунція створення нотатки
-function createNote(title, text, id) {
-
+function createNote(title, text, id, dateNote) {
 	const noteEL = document.createElement('div');
 	noteEL.classList.add('note');
 	noteEL.setAttribute("id", id);
@@ -102,7 +101,7 @@ function createNote(title, text, id) {
 		</div>
 		
 		<div class = "date-box">
-			<p class="note-date">${fDate()}</p>
+			<p class="note-date">${dateNote}</p>
 		</div>
 	`;
 
@@ -287,5 +286,5 @@ window.addEventListener('load', (e) => {
 });
 
 addBtn.addEventListener('click', (e) => {
-	addNewNote("", "");
+	addNewNote("", "", fDate());
 });
