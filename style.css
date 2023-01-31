@@ -163,12 +163,13 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	line-height: 25px;
 }
 
-.date-box{
+/* .date-box{
 	
-}
+} */
 
 .note-date{
-	opacity: 30%;
+	font-size: 12px;
+	opacity: 20%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
