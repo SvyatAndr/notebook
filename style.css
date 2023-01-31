@@ -122,13 +122,12 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 
 .note-edit{
-	
 	margin-right: 10px;
-	background-color: rgb(255, 240, 153);
+	background-color: hsla(176, 100%, 53%, 0);
 }
 .note-delete{
 	
-	background-color: rgb(255, 240, 153);
+	background-color: hsla(176, 100%, 53%, 0);
 }
 
 .note-edit img{
@@ -295,25 +294,24 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-	/* display: none; */
 }
 
 .win-note-exit{
-	background-color: rgb(255, 240, 153);
+	background-color: hsla(176, 100%, 53%, 0);
 	display: flex;
 	align-items:center;
 }
 .win-note-save{
 	margin-right: 20px;
-	background-color: rgb(255, 240, 153);
+	background-color: hsla(176, 100%, 53%, 0);
 }
 .win-note-skin{
 	margin-right: 20px;
-	background-color: rgb(255, 240, 153);
+	background-color: hsla(176, 100%, 53%, 0);
 }
 .win-note-delete{
 	
-	background-color: rgb(255, 240, 153);
+	background-color: hsla(176, 100%, 53%, 0);
 }
 
 .win-note-exit img{
@@ -348,14 +346,14 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 
 
 #win-note-title-input{
-	background-color: rgb(255, 240, 153);
+	background-color: hsla(176, 100%, 53%, 0);
 	height: 30px;
 	width: 100%;
 	font-weight: 900;
 	font-size: 22px;
 }
 #win-note-textarea{
-	background-color: rgb(255, 240, 153);
+	background-color: hsla(176, 100%, 53%, 0);
 	height: 530px;
 	width: 100%;
 	font-size: 18px;

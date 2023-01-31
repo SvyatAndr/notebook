@@ -236,13 +236,9 @@ function editWindow(title, text, id, noteEL) {
 
 	skinBtn.addEventListener('click', (e) => {
 		noteEditWin.style.backgroundColor = "lightblue";
-		noteEditWin.style.border = "2px solid rgb(48, 48, 131)";
-		exitBtn.style.backgroundColor = "lightblue";
-		delNote.style.backgroundColor = "lightblue";
-		skinBtn.style.backgroundColor = "lightblue";
-		saveBtn.style.backgroundColor = "lightblue";
-		titleInputEL.style.backgroundColor = "lightblue";
-		textInputEL.style.backgroundColor = "lightblue";
+		noteEditWin.style.border = "2px solid rgb(140 140 255)";
+		noteEL.style.backgroundColor = "lightblue";
+		noteEL.style.border = "2px solid rgb(140 140 255)";
 	});
 
 	saveBtn.addEventListener('click', (e) => {
