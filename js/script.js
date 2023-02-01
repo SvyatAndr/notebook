@@ -220,7 +220,7 @@ function editWindow(title, text, id, noteEL, dateNote) {
 		</div>
 
 		<div class = "date-box">
-			<p class="note-date">${dateNote}</p>
+			<p class="note-date">${fDate()}</p>
 		</div>
 	</div>
 `;
@@ -232,6 +232,8 @@ function editWindow(title, text, id, noteEL, dateNote) {
 	const skinBtn = editWinEL.querySelector('.win-note-skin');
 	const titleInputEL = editWinEL.querySelector('#win-note-title-input');
 	const textInputEL = editWinEL.querySelector('#win-note-textarea');
+	const dateP = editWinEL.querySelector('.note-date');
+	const dateEL = noteEL.querySelector('.note-date');
 	const titleEl = noteEL.querySelector('#note-title');
 	const textEl = noteEL.querySelector('#note-text');
 
@@ -242,10 +244,6 @@ function editWindow(title, text, id, noteEL, dateNote) {
 	skinBtn.addEventListener('click', (e) => {
 		const el = choicSkinWindow(noteEL);
 		conteiner.appendChild(el);
-		// noteEditWin.style.backgroundColor = "lightblue";
-		// noteEditWin.style.border = "2px solid rgb(140 140 255)";
-		// noteEL.style.backgroundColor = "lightblue";
-		// noteEL.style.border = "2px solid rgb(140 140 255)";
 	});
 
 	saveBtn.addEventListener('click', (e) => {
@@ -260,17 +258,23 @@ function editWindow(title, text, id, noteEL, dateNote) {
 
 	titleInputEL.addEventListener('input', (e) => {
 		titleEl.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML, dateNote: dateP.innerText }, "notes");
 	});
 
 	textInputEL.addEventListener('input', (e) => {
 		textEl.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML, dateNote: dateP.innerText }, "notes");
+	});
+
+	dateP.addEventListener('input', (e) => {
+		dateEL.innerText = e.target.value;
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML, dateNote: dateP.innerText }, "notes");
 	});
 
 	return editWinEL;
 }
 
+//Вікно вибору скина
 function choicSkinWindow(noteEL) {
 	const skinWin = document.createElement('div');
 	skinWin.classList.add('window-box');
@@ -341,6 +345,7 @@ function choicSkinWindow(noteEL) {
 
 	return skinWin;
 }
+
 //Пошук
 function fSearch() {
 	const myInput = document.getElementById('myInput');

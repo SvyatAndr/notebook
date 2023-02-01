@@ -76,8 +76,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 
 .column__body {
 	display: flex;
-	flex-direction: row-reverse;
-	flex-wrap: wrap-reverse;
+	/* flex-direction: row-reverse; */
+	flex-wrap: wrap;
 	justify-content: center;
 	padding: 3px 0px 30px 0px;
 }
@@ -99,7 +99,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	border-radius: 8px;
 	min-height: 200px;
 	height: auto;
-	width: 280px;
+	min-width: 280px;
+	flex-basis: 24%;
 }
 
 .note-header{
@@ -163,10 +164,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	font-size: 18px;
 	font-style:italic;
 	line-height: 25px;
-}
-
-.date-box{
-
 }
 
 .note-date{
