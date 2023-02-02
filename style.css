@@ -97,7 +97,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	padding: 15px;
 	margin: 4px;
 	border-radius: 8px;
-	min-height: 200px;
+	min-height: 250px;
 	height: auto;
 	min-width: 280px;
 	flex-basis: 24%;
@@ -112,14 +112,19 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 #note-title{
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	font-size: 22px;
+	font-size: 20px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	margin: 1px 0;
 }
 #note-text{
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	font-style:italic;
 	line-height: 25px;
 	opacity: 90%;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 .note-btn{
@@ -260,10 +265,13 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	padding: 15px;
 	border-radius: 8px;
 
-	min-height: 98%;
-	max-width: 800px;
-	height: auto;
+	height: 100%;
 	width: 98%;
+}
+
+.note-content{
+	height: 100%;
+	width: 100%;
 }
 
 .win-note-header{
@@ -341,20 +349,16 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	height: 30px;
 	width: 100%;
 	font-weight: 900;
-	font-size: 22px;
+	font-size: 20px;
 }
 #win-note-textarea{
 	resize: none;
 	background-color: hsla(176, 100%, 53%, 0);
-	min-height: 300px;
-	width: 100%;
-	font-size: 18px;
-	font-style:italic;
-	line-height: 25px;
-}
-.note-content{
 	height: 100%;
 	width: 100%;
+	font-size: 16px;
+	font-style:italic;
+	line-height: 25px;
 }
 
 /* Вікно вибору скіна нотатки */

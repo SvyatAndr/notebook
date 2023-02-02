@@ -149,7 +149,6 @@ function fDate() {
 		'Липеня', 'Серпеня', 'Вересеня',
 		'Жовтеня', 'Листопада', 'Груденя'];
 	const strDate = `${nowDate.getDate()} ${month[nowDate.getMonth()]} ${nowDate.getHours()}:${nowDate.getMinutes()}`;
-	console.log(strDate);
 
 	return strDate;
 }
@@ -219,7 +218,7 @@ function editWindow(title, text, id, noteEL) {
 		</div>
 
 		<div class = "date-box">
-			<p class="note-date">${fDate()}</p>
+			<p class="note-date" style="display: none;">${fDate()}</p>
 		</div>
 	</div>
 `;
