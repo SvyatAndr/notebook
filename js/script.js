@@ -188,6 +188,12 @@ function deleteNoteWindow(title, text, id, noteEL) {
 		delWinEL.remove();
 	});
 
+	delWinEL.addEventListener('click', (e) => {
+		delWinEL.remove();
+	});
+
+
+
 	return delWinEL;
 }
 
@@ -331,6 +337,10 @@ function choicSkinWindow(noteEL) {
 
 	const dontBtn = skinWin.querySelector('.btn-dont');
 	dontBtn.addEventListener('click', (e) => {
+		skinWin.remove();
+	});
+
+	skinWin.addEventListener('click', (e) => {
 		skinWin.remove();
 	});
 
