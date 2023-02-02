@@ -64,12 +64,15 @@ const getLocalStorageState = (key, defaultValue) => {
 const addItemToDom = (title, text, id, dateNote) => {
 	const el = createNote(title, text, id, dateNote);
 	notesEL.appendChild(el);
+	return el;
 };
 
 const addNewNote = (title, text, dateNote) => {
 	const id = generateId();
-	addItemToDom(title, text, id, dateNote);
+	const noteEL = addItemToDom(title, text, id, dateNote);
 	addItemToLocalStorage({ id: id, title: title, text: text, dateNote: dateNote }, "notes");
+	const el = editWindow(title, text, id, noteEL, dateNote);
+	conteiner.appendChild(el);
 };
 
 const fetchNotes = () => {
@@ -198,7 +201,7 @@ function deleteNoteWindow(title, text, id, noteEL) {
 // Note editing window
 function editWindow(title, text, id, noteEL) {
 	const editWinEL = document.createElement('div');
-	editWinEL.classList.add('window-box');
+	editWinEL.classList.add('window-box2');
 	editWinEL.innerHTML = `
 	<div class="note-edit-window">
 		<div class="note-content">
