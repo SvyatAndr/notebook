@@ -88,6 +88,7 @@ function createNote(title, text, id, dateNote) {
 	const noteEL = document.createElement('div');
 	noteEL.classList.add('note');
 	noteEL.setAttribute("id", id);
+	noteEL.setAttribute("style", "order: -1;");
 	noteEL.innerHTML = `
 		<div>
 			<div class="note-header">
@@ -115,16 +116,10 @@ function createNote(title, text, id, dateNote) {
 
 	const editBtn = noteEL.querySelector('.note-edit');
 	const deleteBtn = noteEL.querySelector('.note-delete');
-	// const titleEl = noteEL.querySelector('#note-title');
-	// const textEl = noteEL.querySelector('#note-text');
-	// const titleInputEL = noteEL.querySelector('#note-title-input');
-	// const textInputEL = noteEL.querySelector('#note-textarea');
+	const titleEl = noteEL.querySelector('#note-title');
+	const textEl = noteEL.querySelector('#note-text');
 
 	editBtn.addEventListener('click', (e) => {
-		// titleEl.classList.toggle('hidden');
-		// textEl.classList.toggle('hidden');
-		// titleInputEL.classList.toggle('hidden');
-		// textInputEL.classList.toggle('hidden');
 		const el = editWindow(title, text, id, noteEL, dateNote);
 		conteiner.appendChild(el);
 	});
@@ -134,15 +129,14 @@ function createNote(title, text, id, dateNote) {
 		conteiner.appendChild(el);
 	});
 
-	// titleInputEL.addEventListener('input', (e) => {
-	// 	titleEl.innerText = e.target.value;
-	// 	updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
-	// });
-
-	// textInputEL.addEventListener('input', (e) => {
-	// 	textEl.innerText = e.target.value;
-	// 	updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML }, "notes");
-	// });
+	titleEl.addEventListener('click', (e) => {
+		const el = editWindow(title, text, id, noteEL, dateNote);
+		conteiner.appendChild(el);
+	});
+	textEl.addEventListener('click', (e) => {
+		const el = editWindow(title, text, id, noteEL, dateNote);
+		conteiner.appendChild(el);
+	});
 
 
 	return noteEL;
@@ -198,7 +192,7 @@ function deleteNoteWindow(title, text, id, noteEL) {
 }
 
 // Вікно редагування нотатки
-function editWindow(title, text, id, noteEL, dateNote) {
+function editWindow(title, text, id, noteEL) {
 	const editWinEL = document.createElement('div');
 	editWinEL.classList.add('window-box');
 	editWinEL.innerHTML = `
@@ -225,7 +219,7 @@ function editWindow(title, text, id, noteEL, dateNote) {
 	</div>
 `;
 
-	const noteEditWin = editWinEL.querySelector('.note-edit-window');
+	// const noteEditWin = editWinEL.querySelector('.note-edit-window');
 	const exitBtn = editWinEL.querySelector('.win-note-exit');
 	const delNote = editWinEL.querySelector('.win-note-delete');
 	const saveBtn = editWinEL.querySelector('.win-note-save');
@@ -248,6 +242,8 @@ function editWindow(title, text, id, noteEL, dateNote) {
 
 	saveBtn.addEventListener('click', (e) => {
 		editWinEL.remove();
+		location.reload();
+
 	});
 
 	delNote.addEventListener('click', (e) => {
@@ -299,7 +295,6 @@ function choicSkinWindow(noteEL) {
 
 	const redBtn = skinWin.querySelector('.red');
 	redBtn.addEventListener('click', (e) => {
-		console.log('red');
 		noteEditWin.style.backgroundColor = "lightcoral";
 		noteEditWin.style.border = "2px solid rgb(173, 102, 102)";
 		noteEL.style.backgroundColor = "lightcoral";
@@ -309,7 +304,6 @@ function choicSkinWindow(noteEL) {
 
 	const blueBtn = skinWin.querySelector('.blue');
 	blueBtn.addEventListener('click', (e) => {
-		console.log('blue');
 		noteEditWin.style.backgroundColor = "lightblue";
 		noteEditWin.style.border = "2px solid rgb(140 140 255)";
 		noteEL.style.backgroundColor = "lightblue";
@@ -319,7 +313,6 @@ function choicSkinWindow(noteEL) {
 
 	const greenBtn = skinWin.querySelector('.green');
 	greenBtn.addEventListener('click', (e) => {
-		console.log('green');
 		noteEditWin.style.backgroundColor = "lightgreen";
 		noteEditWin.style.border = "2px solid rgb(118, 167, 118)";
 		noteEL.style.backgroundColor = "lightgreen";
@@ -329,7 +322,6 @@ function choicSkinWindow(noteEL) {
 
 	const pinkBtn = skinWin.querySelector('.pink');
 	pinkBtn.addEventListener('click', (e) => {
-		console.log('pink');
 		noteEditWin.style.backgroundColor = "lightpink";
 		noteEditWin.style.border = "2px solid rgb(255, 156, 173)";
 		noteEL.style.backgroundColor = "lightpink";

@@ -149,8 +149,17 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	opacity: 75%;
 }
 
+.textare-note{
+	resize: none;
+	background-color: hsla(176, 100%, 53%, 0);
+	height: auto;
+	width: 100%;
+	font-size: 18px;
+	font-style:italic;
+	line-height: 25px;
+}
 
-#note-title-input{
+/* #note-title-input{
 	background-color: rgb(255, 240, 153);
 	height: 30px;
 	width: 100%;
@@ -164,7 +173,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	font-size: 18px;
 	font-style:italic;
 	line-height: 25px;
-}
+} */
 
 .note-date{
 	font-size: 13px;
@@ -204,14 +213,13 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 
 
 /* Повідомлення для підтвердження видалення */
-
 .window-box{
 	width: 100%;
 	min-height: 100%;
 	height: auto;
 	position: fixed;
 	top: 0;
-	background-color: rgba(0,0,0,.9);
+	background-color: rgba(0, 0, 0, 0.950);
 }
 .messga-box{
 	margin: 0;
@@ -273,9 +281,9 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	border: 2px solid rgb(187, 176, 115);
 	padding: 15px;
 	border-radius: 8px;
-	min-height:98%;
+	min-height: 85%;
 	height: auto;
-	width: 98%;
+	width: 94%;
 }
 
 .win-note-header{
@@ -348,6 +356,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 
 
 #win-note-title-input{
+	resize: none;
 	background-color: hsla(176, 100%, 53%, 0);
 	height: 30px;
 	width: 100%;
@@ -355,8 +364,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	font-size: 22px;
 }
 #win-note-textarea{
+	resize: none;
 	background-color: hsla(176, 100%, 53%, 0);
-	/* resize: none; */
 	height: 530px;
 	width: 100%;
 	font-size: 18px;
