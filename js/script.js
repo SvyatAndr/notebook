@@ -88,17 +88,16 @@ function createNote(title, text, id, dateNote) {
 	const noteEL = document.createElement('div');
 	noteEL.classList.add('note');
 	noteEL.setAttribute("id", id);
-	noteEL.setAttribute("style", "order: -1;");
 	noteEL.innerHTML = `
 		<div>
 			<div class="note-header">
-				<p id="note-title" >${title}</p>
+				<pre id="note-title" > ${title}</pre>
 				<div class="note-btn" id="opacity" >
 					<button id="opacity" class="note-edit"><img src="img/edit.png"></button>
 					<button id="opacity" class="note-delete"><img src="img/trash.png"></button>
 				</div>
 			</div>
-			<p id="note-text">${text}</p>
+			<pre id="note-text">${text}</pre>
 		</div>
 		
 		<div class = "date-box">
@@ -260,17 +259,17 @@ function editWindow(title, text, id, noteEL) {
 
 	titleInputEL.addEventListener('input', (e) => {
 		titleEl.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML, dateNote: dateP.innerText }, "notes");
+		updateItemFromLocalStorage({ id: id, title: e.target.value, text: textEl.innerText, dateNote: dateP.innerText }, "notes");
 	});
 
 	textInputEL.addEventListener('input', (e) => {
 		textEl.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML, dateNote: dateP.innerText }, "notes");
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: e.target.value, dateNote: dateP.innerText }, "notes");
 	});
 
 	dateP.addEventListener('input', (e) => {
 		dateEL.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerHTML, text: textEl.innerHTML, dateNote: dateP.innerText }, "notes");
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: e.target.value }, "notes");
 	});
 
 	return editWinEL;

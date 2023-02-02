@@ -107,22 +107,19 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	display: flex;
 	justify-content: space-between;
 	font-weight: 900;
-	font-size: 22px;
 	margin-bottom: 20px;
 	opacity: 90%;
 }
+#note-title{
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 22px;
+}
 #note-text{
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-size: 18px;
 	font-style:italic;
 	line-height: 25px;
 	opacity: 90%;
-	/* resize: none;
-	background-color: hsla(176, 100%, 53%, 0);
-	height: 200px;
-	width: 100%;
-	font-size: 18px;
-	font-style:italic;
-	line-height: 25px; */
 }
 
 .note-btn{
@@ -154,16 +151,6 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 .note-delete img:hover{
 	opacity: 75%;
-}
-
-.textare-note{
-	resize: none;
-	background-color: hsla(176, 100%, 53%, 0);
-	height: auto;
-	width: 100%;
-	font-size: 18px;
-	font-style:italic;
-	line-height: 25px;
 }
 
 .note-date{
@@ -357,7 +344,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 #win-note-textarea{
 	resize: none;
 	background-color: hsla(176, 100%, 53%, 0);
-	height: 530px;
+	min-height: 300px;
 	width: 100%;
 	font-size: 18px;
 	font-style:italic;
