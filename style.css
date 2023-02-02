@@ -116,6 +116,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	white-space: pre-wrap;
 	word-wrap: break-word;
 	margin: 1px 0;
+	height: 22px;
 }
 #note-text{
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -266,7 +267,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	border-radius: 8px;
 
 	height: 100%;
-	width: 98%;
+	width: 100%;
+	max-width: 800px;
 }
 
 .note-content{

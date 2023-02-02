@@ -91,7 +91,7 @@ function createNote(title, text, id, dateNote) {
 	noteEL.innerHTML = `
 		<div>
 			<div class="note-header">
-				<pre id="note-title" > ${title}</pre>
+				<pre id="note-title" >${title}</pre>
 				<div class="note-btn" id="opacity" >
 					<button id="opacity" class="note-edit"><img src="img/edit.png"></button>
 					<button id="opacity" class="note-delete"><img src="img/trash.png"></button>
