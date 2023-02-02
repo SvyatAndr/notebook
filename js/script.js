@@ -174,7 +174,7 @@ function deleteNoteWindow(title, text, id, noteEL) {
 
 	const yesBtn = delWinEL.querySelector('.yesBtn');
 	const dontdelBtn = delWinEL.querySelector('.dontdelBtn');
-	const editWinEL = document.querySelector('.window-box');
+	const editWinEL = document.querySelector('.window-box2');
 
 	yesBtn.addEventListener('click', (e) => {
 		removeItemFromLocalStorage({ id: id }, "notes");
