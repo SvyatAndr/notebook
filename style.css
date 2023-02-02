@@ -259,9 +259,11 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	border: 2px solid rgb(187, 176, 115);
 	padding: 15px;
 	border-radius: 8px;
-	min-height: 85%;
+
+	min-height: 98%;
+	max-width: 800px;
 	height: auto;
-	width: 97%;
+	width: 98%;
 }
 
 .win-note-header{
