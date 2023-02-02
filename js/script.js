@@ -83,7 +83,7 @@ const conteiner = document.querySelector('.container');
 const notesEL = document.querySelector('.column__body');
 const addBtn = document.querySelector('.add__btn');
 
-// Фунція створення нотатки
+// Note creation feature
 function createNote(title, text, id, dateNote) {
 	const noteEL = document.createElement('div');
 	noteEL.classList.add('note');
@@ -141,7 +141,7 @@ function createNote(title, text, id, dateNote) {
 	return noteEL;
 }
 
-//Генарація дати
+// Date generalization
 function fDate() {
 	const nowDate = new Date();
 	const month = ['Січеня', 'Лютого', 'Березеня',
@@ -154,7 +154,7 @@ function fDate() {
 	return strDate;
 }
 
-// Вікно підтвердження видалення
+// Deletion confirmation window
 function deleteNoteWindow(title, text, id, noteEL) {
 	const delWinEL = document.createElement('div');
 	delWinEL.classList.add('window-box');
@@ -196,7 +196,7 @@ function deleteNoteWindow(title, text, id, noteEL) {
 	return delWinEL;
 }
 
-// Вікно редагування нотатки
+// Note editing window
 function editWindow(title, text, id, noteEL) {
 	const editWinEL = document.createElement('div');
 	editWinEL.classList.add('window-box');
@@ -275,7 +275,7 @@ function editWindow(title, text, id, noteEL) {
 	return editWinEL;
 }
 
-//Вікно вибору скина
+// Reskin selection window
 function choicSkinWindow(noteEL) {
 	const skinWin = document.createElement('div');
 	skinWin.classList.add('window-box');
@@ -347,7 +347,7 @@ function choicSkinWindow(noteEL) {
 	return skinWin;
 }
 
-//Пошук
+// Search
 function fSearch() {
 	const myInput = document.getElementById('myInput');
 	const filter = myInput.value.toUpperCase();
