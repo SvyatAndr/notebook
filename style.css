@@ -46,16 +46,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	width: 1400px;
 }
 .project__header {
-	padding: 10px;
-}
-.project__title{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	text-align: center;
-	font-size: 25px;
-	color: rgb(104 98 64);;
-	margin-bottom: 15px;
+	padding: 20px 0px 15px 0px;
 }
 .search{
 	display: flex;

@@ -61,16 +61,16 @@ const getLocalStorageState = (key, defaultValue) => {
 };
 
 //*---Notes management
-const addItemToDom = (title, text, id, dateNote) => {
-	const el = createNote(title, text, id, dateNote);
+const addItemToDom = (title, text, id, dateNote, colorSkin) => {
+	const el = createNote(title, text, id, dateNote, colorSkin);
 	notesEL.appendChild(el);
 	return el;
 };
 
-const addNewNote = (title, text, dateNote) => {
+const addNewNote = (title, text, dateNote, colorSkin) => {
 	const id = generateId();
 	const noteEL = addItemToDom(title, text, id, dateNote);
-	addItemToLocalStorage({ id: id, title: title, text: text, dateNote: dateNote }, "notes");
+	addItemToLocalStorage({ id: id, title: title, text: text, dateNote: dateNote, colorSkin: colorSkin }, "notes");
 	const el = editWindow(title, text, id, noteEL, dateNote);
 	conteiner.appendChild(el);
 };
@@ -78,7 +78,7 @@ const addNewNote = (title, text, dateNote) => {
 const fetchNotes = () => {
 	const notes = getLocalStorageState("notes", []);
 	notes.forEach((note) => {
-		addItemToDom(note.title, note.text, note.id, note.dateNote);
+		addItemToDom(note.title, note.text, note.id, note.dateNote, note.colorSkin);
 	});
 };
 
@@ -87,10 +87,11 @@ const notesEL = document.querySelector('.column__body');
 const addBtn = document.querySelector('.add__btn');
 
 // Note creation feature
-function createNote(title, text, id, dateNote) {
+function createNote(title, text, id, dateNote, colorSkin) {
 	const noteEL = document.createElement('div');
 	noteEL.classList.add('note');
 	noteEL.setAttribute("id", id);
+	noteEL.setAttribute("style", `background-color: ${colorSkin};`);
 	noteEL.innerHTML = `
 		<div>
 			<div class="note-header">
@@ -100,7 +101,9 @@ function createNote(title, text, id, dateNote) {
 					<button id="opacity" class="note-delete"><img src="img/trash.png"></button>
 				</div>
 			</div>
-			<pre id="note-text">${text}</pre>
+			<div class="note-text-el">
+				<pre id="note-text">${text}</pre>
+			</div>
 		</div>
 		
 		<div class = "date-box">
@@ -356,15 +359,25 @@ function fSearch() {
 
 	const noteElement = notesEL.querySelectorAll('.note');
 	const qwer = notesEL.querySelectorAll('.note-header');
+	const textEL = notesEL.querySelectorAll('.note-text-el');
 
 	for (let i = 0; i < qwer.length; i++) {
-		const noteTitle = qwer[i].getElementsByTagName('p')[0];
+		const noteTitle = qwer[i].getElementsByTagName('pre')[0];
 		if (noteTitle.innerHTML.toUpperCase().indexOf(filter) > -1) {
 			noteElement[i].style.display = "";
 		} else {
 			noteElement[i].style.display = "none";
 		}
 	}
+
+	// for (let i = 0; i < textEL.length; i++) {
+	// 	const noteTitle = textEL[i].getElementsByTagName('pre')[0];
+	// 	if (noteTitle.innerHTML.toUpperCase().indexOf(filter) > -1) {
+	// 		noteElement[i].style.display = "";
+	// 	} else {
+	// 		noteElement[i].style.display = "none";
+	// 	}
+	// }
 }
 
 window.addEventListener('load', (e) => {
@@ -372,5 +385,5 @@ window.addEventListener('load', (e) => {
 });
 
 addBtn.addEventListener('click', (e) => {
-	addNewNote("", "", fDate());
+	addNewNote("", "", fDate(), ``);
 });
