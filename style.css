@@ -33,7 +33,7 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 /*----------------------------------*/
 
 body{
-	background-image: url("img/img_bg.png");
+	background: url("img/bg_img2.jpg");
 }
 
 .container {
@@ -302,7 +302,7 @@ body{
 	position: fixed;
 	top: 0;
 	/* background-color: rgb(255, 244, 180); */
-	background-image: url("img/img_bg.png");
+	background-image: url("img/bg_img2.jpg");
 }
 .note-edit-window{
 	display: flex;
