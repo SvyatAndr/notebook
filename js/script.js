@@ -410,11 +410,10 @@ function firstMessga() {
 	const firstMesg = document.createElement('div');
 	firstMesg.classList.add('first-inf-block');
 	firstMesg.innerHTML = `
-		<p class="first-inf">Щоб стоворити нову нотатку натисніть <br> <br> <span class="add-btn">+</span></p>
+		<p class="first-inf">ЩОБ СТОВРИТИ НОТАТКУ НАТИСНІТЬ <br> <br> <span class="add-btn">+</span></p>
 	`;
 
 	const addBtnTwo = firstMesg.querySelector('.add-btn');
-
 	addBtnTwo.addEventListener('click', (e) => {
 		addNewNote("", "", fDate(), ``);
 	});
