@@ -37,6 +37,8 @@ body{
 }
 
 .container {
+	/* background-color: rgba(0, 0, 0, 0.7); */
+
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	width: 100%;
 	min-height: 100%;
@@ -489,4 +491,18 @@ body{
 .skin-dont-btn button:hover{
 	background-color: rgb(206, 206, 206);
 
+}
+
+@media screen and (max-width: 1200px){
+	.column__body {
+		justify-content: center;
+	}
+	.note{
+		margin: 5px;
+	}
+	.note-data{
+		min-height: 220px;
+		width: 200px;
+		border-radius: 8px;
+	}
 }
