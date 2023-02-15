@@ -32,18 +32,23 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 /*----------------------------------*/
 
+body{
+	background-image: url("img/img_bg.png");
+}
+
 .container {
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	width: auto;
+	width: 100%;
 	min-height: 100%;
 	height: auto;
-	background-color: rgb(255, 244, 180);
+	/* background-color: rgb(255, 244, 180); */
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 .project__body {
-	width: 1400px;
+	width: 1250px;
+	display: block;
 }
 .project__header {
 	padding: 20px 0px 15px 0px;
@@ -57,20 +62,31 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	width: 95%;
 	max-width: 700px;
 	height: 30px;
-	border: 2px solid rgb(187, 176, 115);
 	border-radius: 6px;
 	font-size: 16px;
 	box-shadow: 0px 0px 8px black;
-	background-color: rgb(255, 246, 199);
 	padding: 10px;
 }
 
 .column__body {
 	display: flex;
-	/* flex-direction: row-reverse; */
+	flex-direction: row-reverse;
 	flex-wrap: wrap;
 	justify-content: center;
+	/* display: inline-block; */
+	/* position: relative; */
 	padding: 3px 0px 30px 0px;
+}
+
+.first-inf{
+	margin: 0;
+	position: fixed;
+	left:50%;
+	top:30%;
+	transform:translate(-50%,-50%);
+	text-align: center;
+	opacity: 75%;
+	font-size: 60px;
 }
 
 /*---------CART---------*/
@@ -79,22 +95,34 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 
 .note{
+	/* display: inline-block; */
+
+	/* position: absolute; */
+	/* left:0; */
+	/* top:0; */
+	/* transform:translate(0px, 0px,); */
+
+	margin: 10px;
+
+}
+.note-data{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	box-shadow: 0px 0px 5px black;
-	background-color: rgb(255, 240, 153);
-	border: 2px solid rgb(187, 176, 115);
+	/* background-color: rgb(255, 246, 193); */
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(184, 184, 184);
 	padding: 15px;
-	margin: 4px;
+	min-height: 160px;
+	width: 280px;
 	border-radius: 8px;
-	min-height: 250px;
-	height: auto;
-	min-width: 280px;
-	flex-basis: 24%;
+}
+.note-data:hover{
+	box-shadow: 0px 0px 10px black;
 }
 
 .note-header{
+	
 	display: flex;
 	justify-content: space-between;
 	font-weight: 900;
@@ -170,10 +198,10 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	height: 50px;
 	font-size: 50px;
 	box-shadow: 0px 0px 10px black;
-	background-color: rgb(255, 240, 153);
-	border: 2px solid rgb(187, 176, 115);
+	background-color: rgb(212, 212, 212);
+	/* border: 2px solid rgb(187, 176, 115); */
 	border-radius: 8px;
-	color: rgb(114, 107, 70);
+	color: rgb(56, 56, 56);
 
 	display:flex;
 	justify-content:center;
@@ -182,8 +210,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 }
 
 .add__btn:hover{
-	background-color: rgb(163, 152, 100);
-	color: rgb(255, 240, 153);
+	background-color: rgb(180, 180, 180);
+	color: rgb(231, 231, 231);
 }
 
 
@@ -208,8 +236,10 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	font-size: 20px;
 	font-weight: 900;
 	display: inline-block;
-	background-color: rgb(255, 240, 153);
-	border: 2px solid rgb(133, 125, 82);
+	/* background-color: rgb(255, 240, 153); */
+	/* border: 2px solid rgb(133, 125, 82); */
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(184, 184, 184);
 	padding: 10px;
 	margin: 8px;
 	border-radius: 8px;
@@ -230,15 +260,17 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	width: 105px;
 	font-weight: 900;
 	box-shadow: 0px 0px 5px rgb(0, 0, 0);
-	background-color: rgb(197, 186, 123);
-	border: 2px solid rgb(156, 148, 98);
+	/* background-color: rgb(197, 186, 123); */
+	/* border: 2px solid rgb(156, 148, 98); */
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(184, 184, 184);
 	border-radius: 6px;
 	padding: 5px;
 	font-size: 16px;
 }
 
 .del-win-btn button:hover{
-	background-color: rgb(236, 223, 150);
+	background-color: rgb(206, 206, 206);
 }
 
 
@@ -249,7 +281,8 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	height: auto;
 	position: fixed;
 	top: 0;
-	background-color: rgb(255, 244, 180);
+	/* background-color: rgb(255, 244, 180); */
+	background-image: url("img/img_bg.png");
 }
 .note-edit-window{
 	display: flex;
@@ -261,8 +294,10 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	top:50%;
 	transform:translate(-50%,-50%);
 	box-shadow: 0px 0px 20px black;
-	background-color: rgb(255, 240, 153);
-	border: 2px solid rgb(187, 176, 115);
+	/* background-color: rgb(255, 240, 153); */
+	/* border: 2px solid rgb(187, 176, 115); */
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(184, 184, 184);
 	padding: 15px;
 	border-radius: 8px;
 
@@ -369,8 +404,10 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	font-weight: 900;
 	display: inline-block;
 	box-shadow: 3px 3px 10px black;
-	background-color: rgb(255, 240, 153);
-	border: 3px solid rgb(187, 176, 115);
+	/* background-color: rgb(255, 240, 153); */
+	/* border: 3px solid rgb(187, 176, 115); */
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(184, 184, 184);
 	padding: 10px;
 	margin: 8px;
 	border-radius: 10px;
@@ -389,24 +426,27 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	width: 45px;
 	height: 45px;
 	font-weight: 900;
-	box-shadow: 0px 0px 8px black;
+	/* box-shadow: 0px 0px 8px black; */
 	border-radius: 5px;
 }
-.red {
-	background-color: lightcoral;
-	border: 3px solid rgb(173, 102, 102);
+.skin-win-btn button:hover{
+	box-shadow: 0px 0px 8px black;
+}
+.yellow {
+	background-color: rgb(255, 246, 193);
+	border: 1px solid rgb(184, 184, 184);
 }
 .blue {
-	background-color: lightblue;
-	border: 3px solid rgb(130, 130, 211);
+	background-color: rgb(196, 240, 255);
+	border: 1px solid rgb(184, 184, 184);
 }
 .green {
-	background-color: lightgreen;
-	border: 3px solid rgb(118, 167, 118);
+	background-color: rgb(185, 255, 185);
+	border: 1px solid rgb(184, 184, 184);
 }
 .pink {
-	background-color: lightpink;
-	border: 3px solid rgb(255, 156, 173);
+	background-color: rgb(255, 208, 215);
+	border: 1px solid rgb(184, 184, 184);
 }
 
 .img-note-skin{
@@ -419,8 +459,14 @@ h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
 	width: 100%;
 	font-weight: 900;
 	box-shadow: 0px 0px 8px black;
-	background-color: rgb(197, 186, 123);
-	border: 3px solid rgb(187, 176, 115);
+	/* background-color: rgb(197, 186, 123); */
+	/* border: 3px solid rgb(187, 176, 115); */
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(184, 184, 184);
 	border-radius: 5px;
 	padding: 5px;
+}
+.skin-dont-btn button:hover{
+	background-color: rgb(206, 206, 206);
+
 }
