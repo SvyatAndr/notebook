@@ -385,8 +385,8 @@ function fSearch() {
 			noteElement[i].style.display = "";
 		} else {
 			for (let i = 0; i < textEL.length; i++) {
-				const noteTitle = textEL[i].getElementsByTagName('pre')[0];
-				if (noteTitle.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				const noteText = textEL[i].getElementsByTagName('pre')[0];
+				if (noteText.innerHTML.toUpperCase().indexOf(filter) > -1) {
 					noteElement[i].style.display = "";
 				} else {
 					noteElement[i].style.display = "none";
