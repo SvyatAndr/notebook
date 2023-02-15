@@ -183,6 +183,7 @@ function deleteNoteWindow(title, text, id, noteEL) {
 	yesBtn.addEventListener('click', (e) => {
 		removeItemFromLocalStorage({ id: id }, "notes");
 		noteEL.remove();
+		location.reload();
 		delWinEL.remove();
 		if (editWinEL != null) {
 			editWinEL.remove();
@@ -244,6 +245,7 @@ function editWindow(title, text, id, noteEL) {
 
 	exitBtn.addEventListener('click', (e) => {
 		editWinEL.remove();
+		location.reload();
 	});
 
 	skinBtn.addEventListener('click', (e) => {
@@ -403,16 +405,43 @@ function fSearch() {
 	// }
 }
 
-const textInf = document.querySelector('.first-inf');
+
+function firstMessga() {
+	const firstMesg = document.createElement('div');
+	firstMesg.classList.add('first-inf-block');
+	firstMesg.innerHTML = `
+		<p class="first-inf">Щоб стоворити нову нотатку натисніть <br> <br> <span class="add-btn">+</span></p>
+	`;
+
+	const addBtnTwo = firstMesg.querySelector('.add-btn');
+
+	addBtnTwo.addEventListener('click', (e) => {
+		addNewNote("", "", fDate(), ``);
+	});
+
+	return firstMesg;
+}
+
+
 
 addBtn.addEventListener('click', (e) => {
 	addNewNote("", "", fDate(), ``);
-	textInf.style.display = "none";
-	textInf.remove();
 });
 
 fetchNotes();
 
+
+function createFirstMessag() {
+	const list = [];
+	document.querySelectorAll('.note').forEach((value) => list.push(value));
+	console.log(list.length);
+
+	if (list.length < 1) {
+		const firstEl = firstMessga();
+		notesEL.appendChild(firstEl);
+	}
+}
+createFirstMessag();
 
 
 // const list = [];
