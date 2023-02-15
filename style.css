@@ -493,16 +493,26 @@ body{
 
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1100px){
 	.column__body {
 		justify-content: center;
 	}
 	.note{
-		margin: 3px;
+		margin: 2px;
 	}
 	.note-data{
 		min-height: 220px;
-		width: 180px;
+		width: 150px;
 		border-radius: 8px;
+	}
+	#note-title{
+		font-size: 14px;
+	}
+	#note-text{
+		font-size: 12px;
+		line-height: 15px;
+	}
+	.note-date{
+		font-size: 10px;
 	}
 }
