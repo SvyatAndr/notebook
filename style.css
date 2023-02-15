@@ -498,11 +498,11 @@ body{
 		justify-content: center;
 	}
 	.note{
-		margin: 2px;
+		margin: 3px;
 	}
 	.note-data{
 		min-height: 220px;
-		width: 150px;
+		width: 180px;
 		border-radius: 8px;
 	}
 	#note-title{
