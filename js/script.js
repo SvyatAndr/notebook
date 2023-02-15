@@ -433,7 +433,6 @@ fetchNotes();
 function createFirstMessag() {
 	const list = [];
 	document.querySelectorAll('.note').forEach((value) => list.push(value));
-	console.log(list.length);
 
 	if (list.length < 1) {
 		const firstEl = firstMessga();
