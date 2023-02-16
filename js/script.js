@@ -340,7 +340,7 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 		yellowBtn.addEventListener('click', (e) => {
 			noteEditWin.style.backgroundColor = "rgb(255 247 198)";
 			bgColor = "rgb(255 247 198)";
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
+			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
 			skinWin.remove();
 		});
 
@@ -348,7 +348,7 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 		blueBtn.addEventListener('click', (e) => {
 			noteEditWin.style.backgroundColor = "rgb(208 243 255)";
 			bgColor = "rgb(208 243 255)";
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
+			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
 			skinWin.remove();
 		});
 
@@ -356,7 +356,7 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 		greenBtn.addEventListener('click', (e) => {
 			noteEditWin.style.backgroundColor = "rgb(200 255 200)";
 			bgColor = "rgb(200 255 200)";
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
+			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
 			skinWin.remove();
 		});
 
@@ -364,7 +364,7 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 		pinkBtn.addEventListener('click', (e) => {
 			noteEditWin.style.backgroundColor = "rgb(255 222 227)";
 			bgColor = "rgb(255 222 227)";
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
+			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
 			skinWin.remove();
 		});
 
@@ -372,7 +372,7 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 		standartBtn.addEventListener('click', (e) => {
 			noteEditWin.style.backgroundColor = "";
 			bgColor = "";
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
+			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
 			skinWin.remove();
 		});
 
@@ -392,76 +392,6 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 
 	return editWinEL;
 }
-
-// Reskin selection window
-// function choicSkinWindow(noteEL) {
-// 	const skinWin = document.createElement('div');
-// 	skinWin.classList.add('window-box');
-// 	skinWin.innerHTML = `
-// 	<div class="messga-box">
-// 		<div class="skin-win">
-// 			<p>Виберіть колір нотатки</p>
-// 			<div class="skin-win-btn">
-// 				<button class="yellow"><img class="img-note-skin" src="img/align-left.png"></button>
-// 				<button class="blue"><img class="img-note-skin" src="img/align-left.png"></button>
-// 				<button class="green"><img class="img-note-skin" src="img/align-left.png"></button>
-// 				<button class="pink"><img class="img-note-skin" src="img/align-left.png"></button>
-// 			</div>
-// 			<div class="skin-dont-btn">
-// 				<button class="btn-dont">ВІДМІНИТИ</button>
-// 			</div>
-// 		</div>
-// 	</div>
-// `;
-
-// 	const noteEditWin = document.querySelector('.note-edit-window');
-// 	const noteData = noteEL.querySelector('.note-data');
-
-// 	let bgColor = "";
-
-// 	const yellowBtn = skinWin.querySelector('.yellow');
-// 	yellowBtn.addEventListener('click', (e) => {
-// 		noteEditWin.style.backgroundColor = "rgb(255, 246, 193)";
-// 		noteData.style.backgroundColor = "rgb(255, 246, 193)";
-// 		bgColor = "rgb(255, 246, 193)";
-// 		skinWin.remove();
-// 		console.log(bgColor);
-// 	});
-
-// 	const blueBtn = skinWin.querySelector('.blue');
-// 	blueBtn.addEventListener('click', (e) => {
-// 		noteEditWin.style.backgroundColor = "rgb(196, 240, 255)";
-// 		noteData.style.backgroundColor = "rgb(196, 240, 255)";
-// 		skinWin.remove();
-// 	});
-
-// 	const greenBtn = skinWin.querySelector('.green');
-// 	greenBtn.addEventListener('click', (e) => {
-// 		noteEditWin.style.backgroundColor = "rgb(185, 255, 185)";
-// 		noteData.style.backgroundColor = "rgb(185, 255, 185)";
-// 		skinWin.remove();
-// 	});
-
-// 	const pinkBtn = skinWin.querySelector('.pink');
-// 	pinkBtn.addEventListener('click', (e) => {
-// 		noteEditWin.style.backgroundColor = "rgb(255, 208, 215)";
-// 		noteData.style.backgroundColor = "rgb(255, 208, 215)";
-// 		skinWin.remove();
-// 	});
-
-// 	const dontBtn = skinWin.querySelector('.btn-dont');
-// 	dontBtn.addEventListener('click', (e) => {
-// 		skinWin.remove();
-// 	});
-
-// 	skinWin.addEventListener('click', (e) => {
-// 		skinWin.remove();
-// 	});
-
-
-
-// 	return skinWin;
-// }
 
 // Search
 function fSearch() {
