@@ -404,17 +404,14 @@ function fSearch() {
 
 	for (let i = 0; i < qwer.length; i++) {
 		const noteTitle = qwer[i].getElementsByTagName('pre')[0];
-		if (noteTitle.innerHTML.toUpperCase().indexOf(filter) > -1) {
+		const aTitle = noteTitle.innerHTML.toUpperCase().indexOf(filter);
+		const noteText = textEL[i].getElementsByTagName('pre')[0];
+		const bText = noteText.innerHTML.toUpperCase().indexOf(filter);
+
+		if (aTitle > -1 || bText > -1) {
 			noteElement[i].style.display = "";
 		} else {
-			for (let i = 0; i < textEL.length; i++) {
-				const noteText = textEL[i].getElementsByTagName('pre')[0];
-				if (noteText.innerHTML.toUpperCase().indexOf(filter) > -1) {
-					noteElement[i].style.display = "";
-				} else {
-					noteElement[i].style.display = "none";
-				}
-			}
+			noteElement[i].style.display = "none";
 		}
 	}
 
