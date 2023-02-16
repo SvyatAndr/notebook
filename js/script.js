@@ -296,17 +296,17 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 		// 	return value
 		// }).join(' ');
 
-		updateItemFromLocalStorage({ id: id, title: e.target.value, text: textEl.innerText, dateNote: dateP.innerText }, "notes");
+		updateItemFromLocalStorage({ id: id, title: e.target.value, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: colorSkin }, "notes");
 	});
 
 	textInputEL.addEventListener('input', (e) => {
 		textEl.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: e.target.value, dateNote: dateP.innerText }, "notes");
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: e.target.value, dateNote: dateP.innerText, colorSkin: colorSkin }, "notes");
 	});
 
 	dateP.addEventListener('input', (e) => {
 		dateEL.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: e.target.value }, "notes");
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: e.target.value, colorSkin: colorSkin }, "notes");
 	});
 
 
