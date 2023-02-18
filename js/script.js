@@ -270,10 +270,14 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 		location.reload();
 	});
 
+
 	delNote.addEventListener('click', (e) => {
 		const el = deleteNoteWindow(title, text, id, noteEL);
 		conteiner.appendChild(el);
 	});
+
+
+	let bgColor = "";
 
 	titleInputEL.addEventListener('input', (e) => {
 		titleEl.innerText = e.target.value;
@@ -296,17 +300,17 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 		// 	return value
 		// }).join(' ');
 
-		updateItemFromLocalStorage({ id: id, title: e.target.value, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: colorSkin }, "notes");
+		updateItemFromLocalStorage({ id: id, title: e.target.value, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
 	});
 
 	textInputEL.addEventListener('input', (e) => {
 		textEl.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: e.target.value, dateNote: dateP.innerText, colorSkin: colorSkin }, "notes");
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: e.target.value, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
 	});
 
 	dateP.addEventListener('input', (e) => {
 		dateEL.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: e.target.value, colorSkin: colorSkin }, "notes");
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: e.target.value, colorSkin: bgColor }, "notes");
 	});
 
 
@@ -334,7 +338,7 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 
 		const noteEditWin = document.querySelector('.note-edit-window');
 
-		let bgColor = "";
+		// let bgColor = "";
 
 		const yellowBtn = skinWin.querySelector('.yellow');
 		yellowBtn.addEventListener('click', (e) => {
@@ -342,6 +346,7 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 			bgColor = "rgb(255 247 198)";
 			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
 			skinWin.remove();
+			// return bgColor;
 		});
 
 		const blueBtn = skinWin.querySelector('.blue');
@@ -405,14 +410,36 @@ function fSearch() {
 	for (let i = 0; i < qwer.length; i++) {
 		const noteTitle = qwer[i].getElementsByTagName('pre')[0];
 		const aTitle = noteTitle.innerHTML.toUpperCase().indexOf(filter);
+		const markTitle = noteTitle.innerHTML.toUpperCase();
+
 		const noteText = textEL[i].getElementsByTagName('pre')[0];
 		const bText = noteText.innerHTML.toUpperCase().indexOf(filter);
+		const markText = noteText.innerHTML.toUpperCase();
 
 		if (aTitle > -1 || bText > -1) {
-			noteElement[i].style.display = "";
+			let elementI = noteElement[i];
+			elementI.style.display = "";
+
+			// if (filter.length != 0) {
+			// 	let qwerty = elementI.querySelector('.note-text-el');
+			// 	console.log(qwerty.length);
+			// 	qwerty.innerHTML = `<mark>${markText[i]}</mark>`;
+			// }
+			// console.log(markText[i]);
 		} else {
 			noteElement[i].style.display = "none";
 		}
+
+		// let str = ``;
+		// let strText = noteText.innerHTML = `${str}`;
+		// for (let j = 0; j <= markText.length; j++) {
+
+		// 	if (markText[j] == filter[j]) {
+		// 		strText = strText + `<mark>${markText[j]}</mark>`;
+		// 		noteText[j].innerHTML = `<mark>${markText[j]}</mark>`;
+		// 	}
+		// 	console.log(strText);
+		// }
 	}
 
 	// for (let i = 0; i < textEL.length; i++) {

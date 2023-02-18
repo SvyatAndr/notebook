@@ -72,7 +72,7 @@ body{
 	height: 30px;
 	border-radius: 6px;
 	font-size: 16px;
-	box-shadow: 0px 0px 8px black;
+	box-shadow: 0px 0px 10px rgb(87, 87, 87);
 	padding: 10px;
 }
 .setting-btn{
@@ -163,7 +163,7 @@ body{
 	border-radius: 8px;
 }
 .note-data:hover{
-	box-shadow: 0px 0px 10px black;
+	box-shadow: 0px 0px 10px rgb(87, 87, 87);
 }
 
 .note-header{
@@ -242,7 +242,7 @@ body{
 	width: 50px;
 	height: 50px;
 	font-size: 50px;
-	box-shadow: 0px 0px 10px black;
+	box-shadow: 0px 0px 10px rgb(87, 87, 87);
 	background-color: rgb(212, 212, 212);
 	/* border: 2px solid rgb(187, 176, 115); */
 	border-radius: 8px;
@@ -338,7 +338,7 @@ body{
 	left:50%;
 	top:50%;
 	transform:translate(-50%,-50%);
-	box-shadow: 0px 0px 20px black;
+	box-shadow: 0px 0px 10px rgb(109, 109, 109);
 	/* background-color: rgb(255, 240, 153); */
 	/* border: 2px solid rgb(187, 176, 115); */
 	background-color: rgb(255, 255, 255);
