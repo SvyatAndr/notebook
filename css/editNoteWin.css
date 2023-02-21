@@ -1,0 +1,122 @@
+.window-box2{
+	width: 100%;
+	min-height: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	/* background-color: rgb(255, 244, 180); */
+	background-image: url("/img/bg_img2.jpg");
+}
+.note-edit-window{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	position: fixed;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	box-shadow: 0px 0px 10px rgb(109, 109, 109);
+	/* background-color: rgb(255, 240, 153); */
+	/* border: 2px solid rgb(187, 176, 115); */
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(184, 184, 184);
+	padding: 15px;
+	/* border-radius: 8px; */
+
+	height: 100%;
+	width: 100%;
+	max-width: 800px;
+}
+
+.note-content{
+	height: 100%;
+	width: 100%;
+}
+
+.win-note-header{
+	display: flex;
+	/* justify-content: space-between; */
+	flex-direction: column;
+	font-weight: 900;
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+
+.div-btn{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+.win-note-btn{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.win-note-exit{
+	background-color: hsla(176, 100%, 53%, 0);
+	display: flex;
+	align-items:center;
+}
+.win-note-save{
+	margin-right: 20px;
+	background-color: hsla(176, 100%, 53%, 0);
+}
+.win-note-skin{
+	margin-right: 20px;
+	background-color: hsla(176, 100%, 53%, 0);
+}
+.win-note-delete{
+	
+	background-color: hsla(176, 100%, 53%, 0);
+}
+
+.win-note-exit img{
+	width: 28px;
+	opacity: 50%;
+}
+.win-note-save img{
+	width: 28px;
+	opacity: 50%;
+}
+.win-note-skin img{
+	width: 28px;
+	opacity: 50%;
+}
+.win-note-delete img{
+	width: 28px;
+	opacity: 50%;
+}
+
+.win-note-exit:hover{
+	opacity: 75%;
+}
+.win-note-save img:hover{
+	opacity: 75%;
+}
+.win-note-skin img:hover{
+	opacity: 75%;
+}
+.win-note-delete img:hover{
+	opacity: 75%;
+}
+
+
+#win-note-title-input{
+	resize: none;
+	background-color: hsla(176, 100%, 53%, 0);
+	height: 30px;
+	width: 100%;
+	font-weight: 900;
+	font-size: 20px;
+}
+#win-note-textarea{
+	resize: none;
+	background-color: hsla(176, 100%, 53%, 0);
+	height: 100%;
+	width: 100%;
+	font-size: 16px;
+	font-style:italic;
+	line-height: 25px;
+}

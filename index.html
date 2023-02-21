@@ -6,22 +6,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ЗАПИСНА КНИЖКА</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/main.css">
 	<link rel="icon" href="img/book.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
 <body>
-	<div class="container">
+	<main class="container">
 		<div class="project__body">
-			<div class="project__header">
+			<header class="project__header">
 				<div class="search">
 					<div>
 						<input type="text" onkeyup="fSearch()" id="myInput" placeholder="Пошук...">
-						<button class="setting-btn"><img src="img/settings.png" alt=""></button>
+						<button class="setting-btn" onclick="changeImageSrc()">
+							<img id="moon-image" src="img/moon.png" alt="">
+						</button>
 					</div>
 				</div>
-			</div>
+			</header>
 
 			<div class="column__body">
 
@@ -29,7 +31,7 @@
 
 			<button class="add__btn">+</button>
 		</div>
-	</div>
+	</main>
 
 	<script src="js/script.js"></script>
 </body>

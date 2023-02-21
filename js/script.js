@@ -85,6 +85,7 @@ const fetchNotes = () => {
 const conteiner = document.querySelector('.container');
 const notesEL = document.querySelector('.column__body');
 const addBtn = document.querySelector('.add__btn');
+const themeBtn = document.querySelector('.setting-btn');
 
 // Note creation feature
 function createNote(title, text, id, dateNote, colorSkin) {
@@ -473,6 +474,30 @@ function firstMessga() {
 addBtn.addEventListener('click', (e) => {
 	addNewNote("", "", fDate(), ``);
 });
+
+
+function changeImageSrc() {
+	const myInput = document.querySelector('#myInput');
+	const bodyEl = document.querySelector('body');
+	const image = document.querySelector("#moon-image");
+	const noteCart = document.querySelector('.note-data');
+
+	if (image.src.match("moon")) {
+		image.src = "img/sun.png";
+		themeBtn.style.backgroundColor = "rgb(73 73 73)";
+		myInput.style.backgroundColor = "rgb(73 73 73)";
+		bodyEl.setAttribute("style", 'background: url("img/bg_img2_dark.jpg");');
+		noteCart.setAttribute("style", 'background: rgb(73 73 73);');
+		addBtn.setAttribute("style", 'background: rgb(73 73 73); color: white;');
+	} else {
+		image.src = "img/moon.png";
+		themeBtn.style.backgroundColor = "";
+		myInput.style.backgroundColor = "";
+		bodyEl.setAttribute("style", '');
+		noteCart.setAttribute("style", '');
+		addBtn.setAttribute("style", '');
+	}
+}
 
 fetchNotes();
 

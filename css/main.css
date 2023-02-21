@@ -1,0 +1,164 @@
+@import url(nullCss.css); /* Null style */
+@import url(noteStyle.css); /* Note */
+@import url(messgeDel.css); /* Winodw messge delete */
+@import url(editNoteWin.css); /* EDIT window */
+@import url(choicSkinWin.css); /* Вікно вибору скіна нотатки */
+
+body{
+	background: url("/img/bg_img2.jpg");
+}
+
+.container {
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	width: 100%;
+	min-height: 100%;
+	height: auto;
+	/* background-color: rgb(255, 244, 180); */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.project__body {
+	width: 1250px;
+	display: block;
+}
+
+/* Project header */
+.project__header {
+	padding: 20px 0px 15px 0px;
+}
+.search{
+	display: flex;
+	justify-content: center;
+}
+.search div{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 100%;
+}
+.search input{
+	display: inline-block;
+	min-width: 75%;
+	/* width: 95%; */
+	height: 30px;
+	border-radius: 6px;
+	font-size: 16px;
+	box-shadow: 0px 0px 10px rgb(87, 87, 87);
+	padding: 10px;
+}
+.setting-btn{
+	/* display: none; */
+	margin: 0px 0px 0px 5px;
+	display: inline-block;
+	width: 40px;
+	padding: 2px;
+	background-color: hsl(0, 0%, 100%);
+	border-radius: 6px;
+	box-shadow: 0px 0px 8px black;
+}
+.setting-btn img{
+	height: 20px;
+	opacity: 85%;
+}
+.setting-btn img:hover{
+	opacity: 95%;
+}
+.setting-btn:hover{
+	background-color: rgb(206, 206, 206);
+}
+
+/* Block whith notes */
+.column__body {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	/* display: inline-block; */
+	/* position: relative; */
+	padding: 3px 0px 30px 0px;
+}
+
+.first-inf-block{
+	position: fixed;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	opacity: 80%;
+	background-color:rgb(0, 0, 0);
+	height: 100%;
+	width: 100%;
+}
+.first-inf{
+	position: fixed;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+
+	text-align: center;
+	opacity: 82%;
+
+	color: white;
+	font-size: 30px;
+}
+.first-inf span{
+	font-size: 35px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 7px;
+	padding: 0px 9px 0px 9px;
+	color: black;
+	cursor: pointer;
+}
+
+/*---------BTN---------*/
+.add__btn{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+
+	margin: 3%;
+	width: 50px;
+	height: 50px;
+	font-size: 50px;
+	box-shadow: 0px 0px 10px rgb(87, 87, 87);
+	background-color: rgb(212, 212, 212);
+	/* border: 2px solid rgb(187, 176, 115); */
+	border-radius: 8px;
+	color: rgb(56, 56, 56);
+
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	cursor: pointer;
+}
+
+.add__btn:hover{
+	background-color: rgb(180, 180, 180);
+	color: rgb(231, 231, 231);
+}
+
+
+@media screen and (max-width: 1082px){
+	.column__body {
+		justify-content: center;
+	}
+	.note{
+		margin: 3px;
+	}
+	.note-data{
+		min-height: 220px;
+		width: 154px;
+		border-radius: 8px;
+	}
+	#note-title{
+		font-size: 14px;
+	}
+	#note-text{
+		font-size: 12px;
+		line-height: 15px;
+	}
+	.note-date{
+		font-size: 10px;
+	}
+}
