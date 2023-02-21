@@ -208,7 +208,7 @@ function deleteNoteWindow(title, text, id, noteEL) {
 function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 	const editWinEL = document.createElement('div');
 	editWinEL.classList.add('window-box2');
-	editWinEL.setAttribute("style", `background-image: url("/img/bg_img2.jpg");`);
+	editWinEL.setAttribute("style", `background-image: url("img/bg_img2.jpg");`);
 	editWinEL.innerHTML = `
 	<div class="note-edit-window" style="background-color:${colorSkin};">
 		<div class="note-content">
