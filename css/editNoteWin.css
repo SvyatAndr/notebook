@@ -4,8 +4,6 @@
 	height: auto;
 	position: fixed;
 	top: 0;
-	/* background-color: rgb(255, 244, 180); */
-	background-image: url("/img/bg_img2.jpg");
 }
 .note-edit-window{
 	display: flex;
