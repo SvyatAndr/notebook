@@ -478,7 +478,7 @@ addBtn.addEventListener('click', (e) => {
 
 function changeImageSrc() {
 	const myInput = document.querySelector('#myInput');
-	const bodyEl = document.querySelector('body');
+	const bodyEl = document.querySelector('main');
 	const image = document.querySelector("#moon-image");
 	const noteCart = document.querySelector('.note-data');
 
@@ -493,7 +493,7 @@ function changeImageSrc() {
 		image.src = "img/moon.png";
 		themeBtn.style.backgroundColor = "";
 		myInput.style.backgroundColor = "";
-		bodyEl.setAttribute("style", '');
+		bodyEl.setAttribute("style", 'background: url("img/bg_img2.jpg");');
 		noteCart.setAttribute("style", '');
 		addBtn.setAttribute("style", '');
 	}

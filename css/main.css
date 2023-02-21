@@ -4,8 +4,14 @@
 @import url(editNoteWin.css); /* EDIT window */
 @import url(choicSkinWin.css); /* Вікно вибору скіна нотатки */
 
-body{
+/* body{
 	background: url("/img/bg_img2.jpg");
+} */
+main{
+	padding: 0;
+	margin: 0;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .container {
