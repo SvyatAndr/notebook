@@ -9,6 +9,9 @@ main{
 	margin: 0;
 	min-width: 100%;
 	min-height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .container {
@@ -16,20 +19,12 @@ main{
 	width: 100%;
 	min-height: 100%;
 	height: auto;
-	/* background-color: rgb(255, 244, 180); */
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-
-.project__body {
-	width: 1250px;
-	display: block;
+	max-width: 1200px;
 }
 
 /* Project header */
 .project__header {
-	padding: 20px 0px 15px 0px;
+	padding: 20px 15% 15px 15%;
 }
 .search{
 	display: flex;
@@ -42,9 +37,8 @@ main{
 	width: 100%;
 }
 .search input{
-	display: inline-block;
-	min-width: 75%;
-	/* width: 95%; */
+	display: flex;
+	flex: 2;
 	height: 30px;
 	border-radius: 6px;
 	font-size: 16px;
@@ -52,14 +46,15 @@ main{
 	padding: 10px;
 }
 .setting-btn{
-	/* display: none; */
-	margin: 0px 0px 0px 5px;
+	display: flex;
+	flex: 1;
+	margin: 0px 0px 0px 12px;
 	display: inline-block;
-	width: 40px;
+	max-width: 40px;
 	padding: 2px;
 	background-color: hsl(0, 0%, 100%);
 	border-radius: 6px;
-	box-shadow: 0px 0px 8px black;
+	box-shadow: 0px 0px 10px rgb(87, 87, 87);
 }
 .setting-btn img{
 	height: 20px;
@@ -67,19 +62,20 @@ main{
 }
 .setting-btn img:hover{
 	opacity: 95%;
+	transition: 0.3s;
 }
 .setting-btn:hover{
 	background-color: rgb(206, 206, 206);
+	transition: 0.3s;
 }
 
 /* Block whith notes */
+
 .column__body {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	/* display: inline-block; */
-	/* position: relative; */
 	padding: 3px 0px 30px 0px;
 }
 
@@ -139,10 +135,25 @@ main{
 .add__btn:hover{
 	background-color: rgb(180, 180, 180);
 	color: rgb(231, 231, 231);
+	transition: 0.3s;
 }
 
 
-@media screen and (max-width: 1082px){
+@media (max-width: 1200px){
+	.container {
+		max-width: 900px;
+	}
+}
+@media (max-width: 920px){
+	.container {
+		max-width: 600px;
+	}
+}
+
+@media (max-width: 620px){
+	.container {
+		max-width: 480px;
+	}
 	.column__body {
 		justify-content: center;
 	}

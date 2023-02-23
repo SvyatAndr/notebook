@@ -89,15 +89,19 @@
 
 .win-note-exit:hover{
 	opacity: 75%;
+	transition: 0.3s;
 }
 .win-note-save img:hover{
 	opacity: 75%;
+	transition: 0.3s;
 }
 .win-note-skin img:hover{
 	opacity: 75%;
+	transition: 0.3s;
 }
 .win-note-delete img:hover{
 	opacity: 75%;
+	transition: 0.3s;
 }
 
 

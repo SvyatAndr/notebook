@@ -98,9 +98,9 @@ function createNote(title, text, id, dateNote, colorSkin) {
 		<div>
 			<div class="note-header">
 				<pre id="note-title" >${title}</pre>
-				<div class="note-btn" id="opacity" >
-					<button id="opacity" class="note-edit"><img src="img/edit.png"></button>
-					<button id="opacity" class="note-delete"><img src="img/trash.png"></button>
+				<div class="note-btn" id="opacitybtn" >
+					<button id="opacitybtn" class="note-edit"><img src="img/edit.png"></button>
+					<button id="opacitybtn" class="note-delete"><img src="img/trash.png"></button>
 				</div>
 			</div>
 			<div class="note-text-el">
@@ -114,12 +114,13 @@ function createNote(title, text, id, dateNote, colorSkin) {
 	</div>
 	`;
 
-	const elem = noteEL.querySelector('#opacity');
+	const elem = noteEL.querySelector('#opacitybtn');
 	noteEL.onmouseover = function () {
-		elem.style.display = "flex";
+		elem.style.opacity = "100%";
+		elem.style.transition = "0.5s";
 	};
 	noteEL.onmouseleave = function () {
-		elem.style.display = "none";
+		elem.style.opacity = "0%";
 	};
 
 	const editBtn = noteEL.querySelector('.note-edit');
@@ -485,18 +486,18 @@ function changeImageSrc() {
 
 	if (image.src.match("moon")) {
 		image.src = "img/sun.png";
-		themeBtn.style.backgroundColor = "rgb(73 73 73)";
-		myInput.style.backgroundColor = "rgb(73 73 73)";
-		bodyEl.setAttribute("style", 'background: url("img/bg_img2_dark.jpg");');
-		noteCart.setAttribute("style", 'background: rgb(73 73 73);');
-		addBtn.setAttribute("style", 'background: rgb(73 73 73); color: white;');
+		themeBtn.setAttribute("style", 'background: rgb(105 105 105); transition: 0.6s; box-shadow: 0px 0px 10px rgb(255 255 255);');
+		myInput.setAttribute("style", 'background: rgb(105 105 105); transition: 0.6s; box-shadow: 0px 0px 10px rgb(255 255 255); color: #fff;');
+		bodyEl.setAttribute("style", 'background: url("img/bg_img2_dark.jpg"); transition: 0.6s;');
+		noteCart.setAttribute("style", 'background: rgb(105 105 105); transition: 0.6s;');
+		addBtn.setAttribute("style", 'background: rgb(105 105 105); box-shadow: 0px 0px 10px rgb(255 255 255); color: white; transition: 0.6s;');
 	} else {
 		image.src = "img/moon.png";
-		themeBtn.style.backgroundColor = "";
-		myInput.style.backgroundColor = "";
-		bodyEl.setAttribute("style", 'background: url("img/bg_img2.jpg");');
-		noteCart.setAttribute("style", '');
-		addBtn.setAttribute("style", '');
+		themeBtn.setAttribute("style", 'transition: 0.6s;');
+		myInput.setAttribute("style", 'transition: 0.6s;');
+		bodyEl.setAttribute("style", 'background: url("img/bg_img2.jpg"); transition: 0.6s;');
+		noteCart.setAttribute("style", 'transition: 0.6s;');
+		addBtn.setAttribute("style", 'transition: 0.6s;');
 	}
 }
 
