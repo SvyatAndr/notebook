@@ -281,6 +281,21 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 			location.reload();
 		}
 	});
+	window.onpopstate = function (event) {
+		const chekTitleEdit = titleInputEL.value.length;
+		const chekTextEdit = textInputEL.value.length;
+		if (chekTextEdit == 0 && chekTitleEdit == 0) {
+			removeItemFromLocalStorage({ id: id }, "notes");
+			noteEL.remove();
+			location.reload();
+			// delWinEL.remove();
+			// if (editWinEL != null) {
+			// 	editWinEL.remove();
+			// }
+		}
+		editWinEL.remove();
+		location.reload();
+	};
 
 	skinBtn.addEventListener('click', (e) => {
 		const el = choicSkinWindow(noteEL);
