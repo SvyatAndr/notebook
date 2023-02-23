@@ -504,7 +504,7 @@ function changeImageSrc() {
 
 	if (image.src.match("moon")) {
 		image.src = "img/sun.png";
-		themeBtn.setAttribute("style", 'background: rgb(105 105 105); transition: 0.6s; box-shadow: 0px 0px 10px rgb(255 255 255);');
+		themeBtn.setAttribute("style", 'background: rgb(105 105 105); transition: 0.6s; box-shadow: 0px 0px 10px rgb(255 255 255); color: #fff;');
 		myInput.setAttribute("style", 'background: rgb(105 105 105); transition: 0.6s; box-shadow: 0px 0px 10px rgb(255 255 255); color: #fff;');
 		bodyEl.setAttribute("style", 'background: url("img/bg_img2_dark.jpg"); transition: 0.6s;');
 		noteCart.setAttribute("style", 'background: rgb(105 105 105); transition: 0.6s;');
