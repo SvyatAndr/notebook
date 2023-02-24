@@ -86,7 +86,6 @@ const conteiner = document.querySelector('main');
 const notesEL = document.querySelector('.column__body');
 const addBtn = document.querySelector('.add__btn');
 const themeBtn = document.querySelector('.setting-btn');
-let lolTest = 0;
 
 // Note creation feature
 function createNote(title, text, id, dateNote, colorSkin) {
@@ -100,8 +99,8 @@ function createNote(title, text, id, dateNote, colorSkin) {
 			<div class="note-header">
 				<pre id="note-title" >${title}</pre>
 				<div class="note-btn" id="opacitybtn" >
-					<button id="opacitybtn" class="note-edit"><img src="img/edit.png"></button>
-					<button id="opacitybtn" class="note-delete"><img src="img/trash.png"></button>
+					<button id="opacitybtn" class="note-edit" title="Редагувати"><img src="img/edit.png"></button>
+					<button id="opacitybtn" class="note-delete" title="Видалити"><img src="img/trash.png"></button>
 				</div>
 			</div>
 			<div class="note-text-el">
@@ -130,7 +129,6 @@ function createNote(title, text, id, dateNote, colorSkin) {
 	const textEl = noteEL.querySelector('#note-text');
 
 	editBtn.addEventListener('click', (e) => {
-		lolTest = 1;
 		const el = editWindow(title, text, id, noteEL, dateNote, colorSkin);
 		conteiner.appendChild(el);
 	});
@@ -217,11 +215,11 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 		<div class="note-content">
 			<div class="win-note-header">
 				<div class="div-btn">
-					<button id="opacity" class="win-note-exit"><img src="img/arrow-left.png"></button>
+					<button id="opacity" class="win-note-exit" title="Вихід"><img src="img/arrow-left.png"></button>
 					<div class="win-note-btn" id="opacity" >
-						<button id="opacity" class="win-note-skin"><img src="img/skin.png"></button>
-						<button id="opacity" class="win-note-save"><img src="img/save.png"></button>
-						<button id="opacity" class="win-note-delete"><img src="img/trash.png"></button>
+						<button id="opacity" class="win-note-skin" title="Замінити стиль"><img src="img/skin.png"></button>
+						<button id="opacity" class="win-note-save" title="Зберегти"><img src="img/save.png"></button>
+						<button id="opacity" class="win-note-delete" title="Видалити"><img src="img/trash.png"></button>
 					</div>
 				</div>
 				<textarea id="win-note-title-input"  maxlength="50" placeholder="Ваш заголовок">${title}</textarea>
@@ -281,22 +279,6 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 			location.reload();
 		}
 	});
-	window.addEventListener('beforeunload', function (event) {
-		const chekTitleEdit = titleInputEL.value.length;
-		const chekTextEdit = textInputEL.value.length;
-		if (chekTextEdit == 0 && chekTitleEdit == 0) {
-			removeItemFromLocalStorage({ id: id }, "notes");
-			noteEL.remove();
-			location.reload();
-			// delWinEL.remove();
-			// if (editWinEL != null) {
-			// 	editWinEL.remove();
-			// }
-		}
-		editWinEL.remove();
-		location.reload();
-	});
-
 
 	skinBtn.addEventListener('click', (e) => {
 		const el = choicSkinWindow(noteEL);
