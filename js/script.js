@@ -1,6 +1,3 @@
-//*---Utils
-const isBrowser = () => typeof window !== "undefined";
-
 const generateId = () => {
 	return Math.random().toString(16).slice(2);
 };
@@ -30,9 +27,6 @@ const updateItemFromLocalStorage = (item, key) => {
 };
 
 const saveLocalStorageState = (key, value) => {
-	if (!isBrowser()) {
-		return;
-	}
 	try {
 		localStorage.setItem(key, JSON.stringify(value));
 	} catch (e) {
@@ -41,9 +35,6 @@ const saveLocalStorageState = (key, value) => {
 };
 
 const getLocalStorageState = (key, defaultValue) => {
-	if (!isBrowser()) {
-		return defaultValue;
-	}
 	try {
 		const data = localStorage.getItem(key);
 		if (data) {
@@ -94,7 +85,8 @@ function createNote(title, text, id, dateNote, colorSkin) {
 	noteEL.setAttribute("id", id);
 	noteEL.setAttribute("style", `transform: translate(0px, 0px);`);
 	noteEL.innerHTML = `
-	<div class="note-data" style="background-color: ${colorSkin};">
+	<div class="selected"><img src="img/selected.svg" alt="select"></div>
+	<div class="note-data" style="background-color: ${colorSkin}; border: 1px solid rgb(184, 184, 184);">
 		<div>
 			<div class="note-header">
 				<pre id="note-title" >${title}</pre>
@@ -115,18 +107,33 @@ function createNote(title, text, id, dateNote, colorSkin) {
 	`;
 
 	const elem = noteEL.querySelector('#opacitybtn');
+	const selectBtn = noteEL.querySelector('.selected');
 	noteEL.onmouseover = function () {
 		elem.style.opacity = "100%";
 		elem.style.transition = "0.5s";
+		// selectBtn.style.opacity = "100%";
+		// selectBtn.style.transition = "0.5s";
+		selectBtn.style.display = "block";
 	};
 	noteEL.onmouseleave = function () {
 		elem.style.opacity = "0%";
+		selectBtn.style.display = "";
+		// selectBtn.style.opacity = "0%";
 	};
+
+
 
 	const editBtn = noteEL.querySelector('.note-edit');
 	const deleteBtn = noteEL.querySelector('.note-delete');
 	const titleEl = noteEL.querySelector('#note-title');
 	const textEl = noteEL.querySelector('#note-text');
+	const noteData = noteEL.querySelector('.note-data');
+
+	selectBtn.addEventListener('click', (e) => {
+		// selectBtn.style.opacity = "100%";
+		noteData.style.border = "1px solid rgb(36, 36, 36);";
+		// noteData.setAttribute("style", "border: 1px solid rgb(36, 36, 36); border-radius: 9px;");
+	});
 
 	editBtn.addEventListener('click', (e) => {
 		const el = editWindow(title, text, id, noteEL, dateNote, colorSkin);
@@ -326,7 +333,7 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 
 	dateP.addEventListener('input', (e) => {
 		dateEL.innerText = e.target.value;
-		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: e.target.value, colorSkin: bgColor }, "notes");
+		updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerHTML, dateNote: e.target.value, colorSkin: colorSkin }, "notes");
 	});
 
 	// Reskin selection window
@@ -353,46 +360,46 @@ function editWindow(title, text, id, noteEL, dateNote, colorSkin) {
 
 		const noteEditWin = document.querySelector('.note-edit-window');
 
-		let bgColor = "";
+		// let colorSkin = "";
 
 		const yellowBtn = skinWin.querySelector('.yellow');
 		yellowBtn.addEventListener('click', (e) => {
 			noteEditWin.style.backgroundColor = "rgb(255 247 198)";
-			bgColor = "rgb(255 247 198)";
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
+			colorSkin = "rgb(255 247 198)";
+			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: colorSkin }, "notes");
 			skinWin.remove();
-			// return bgColor;
+			// return colorSkin;
 		});
 
 		const blueBtn = skinWin.querySelector('.blue');
 		blueBtn.addEventListener('click', (e) => {
 			noteEditWin.style.backgroundColor = "rgb(208 243 255)";
-			bgColor = "rgb(208 243 255)";
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
+			colorSkin = "rgb(208 243 255)";
+			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: colorSkin }, "notes");
 			skinWin.remove();
 		});
 
 		const greenBtn = skinWin.querySelector('.green');
 		greenBtn.addEventListener('click', (e) => {
 			noteEditWin.style.backgroundColor = "rgb(200 255 200)";
-			bgColor = "rgb(200 255 200)";
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
+			colorSkin = "rgb(200 255 200)";
+			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: colorSkin }, "notes");
 			skinWin.remove();
 		});
 
 		const pinkBtn = skinWin.querySelector('.pink');
 		pinkBtn.addEventListener('click', (e) => {
 			noteEditWin.style.backgroundColor = "rgb(255 222 227)";
-			bgColor = "rgb(255 222 227)";
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
+			colorSkin = "rgb(255 222 227)";
+			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: colorSkin }, "notes");
 			skinWin.remove();
 		});
 
 		const standartBtn = skinWin.querySelector('.btn-standart');
 		standartBtn.addEventListener('click', (e) => {
 			noteEditWin.style.backgroundColor = "";
-			bgColor = "";
-			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: bgColor }, "notes");
+			colorSkin = "";
+			updateItemFromLocalStorage({ id: id, title: titleEl.innerText, text: textEl.innerText, dateNote: dateP.innerText, colorSkin: colorSkin }, "notes");
 			skinWin.remove();
 		});
 
@@ -513,8 +520,6 @@ function changeImageSrc() {
 	}
 }
 
-fetchNotes();
-
 
 function createFirstMessag() {
 	const list = [];
@@ -525,6 +530,8 @@ function createFirstMessag() {
 		notesEL.appendChild(firstEl);
 	}
 }
+
+fetchNotes();
 createFirstMessag();
 
 // const list = [];

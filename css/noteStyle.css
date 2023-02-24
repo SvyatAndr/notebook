@@ -9,17 +9,28 @@
 	/* left:0; */
 	/* top:0; */
 	/* transform:translate(0px, 0px,); */
-
+	position: relative;
 	margin: 10px;
+	/* border: 1px solid rgb(36, 36, 36); */
+	/* border-radius: 9px; */
 
 }
+.selected{
+	display: none;
+	/* opacity: 0%; */
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	/* border: 2px solid rgb(184, 184, 184);
+	border-radius: 100%; */
+}
+
 .note-data{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	/* background-color: rgb(255, 246, 193); */
 	background-color: rgb(255, 255, 255);
-	border: 1px solid rgb(184, 184, 184);
+	/* border: 1px solid rgb(184, 184, 184); */
 	padding: 15px;
 	min-height: 220px;
 	width: 280px;
