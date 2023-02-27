@@ -85,7 +85,7 @@ function createNote(title, text, id, dateNote, colorSkin) {
 	noteEL.setAttribute("id", id);
 	noteEL.setAttribute("style", `transform: translate(0px, 0px);`);
 	noteEL.innerHTML = `
-	<div class="selected"><img src="img/selected.svg" alt="select"></div>
+	<div id="selected"><img src="img/selected.svg" alt="select"></div>
 	<div class="note-data" style="background-color: ${colorSkin}; border: 1px solid rgb(184, 184, 184);">
 		<div>
 			<div class="note-header">
@@ -107,7 +107,7 @@ function createNote(title, text, id, dateNote, colorSkin) {
 	`;
 
 	const elem = noteEL.querySelector('#opacitybtn');
-	const selectBtn = noteEL.querySelector('.selected');
+	const selectBtn = noteEL.querySelector('#selected');
 	noteEL.onmouseover = function () {
 		elem.style.opacity = "100%";
 		elem.style.transition = "0.5s";
@@ -115,6 +115,16 @@ function createNote(title, text, id, dateNote, colorSkin) {
 		// selectBtn.style.transition = "0.5s";
 		selectBtn.style.display = "block";
 	};
+
+
+
+	selectBtn.addEventListener('click', (e) => {
+		noteEL.setAttribute("style", "border: 1px solid rgb(36, 36, 36); border-radius: 9px;");
+		// selectBtn.style.opacity = "100%";
+		// noteEL.style.border = "1px solid rgb(36, 36, 36);";
+	});
+
+
 	noteEL.onmouseleave = function () {
 		elem.style.opacity = "0%";
 		selectBtn.style.display = "";
@@ -128,12 +138,6 @@ function createNote(title, text, id, dateNote, colorSkin) {
 	const titleEl = noteEL.querySelector('#note-title');
 	const textEl = noteEL.querySelector('#note-text');
 	const noteData = noteEL.querySelector('.note-data');
-
-	selectBtn.addEventListener('click', (e) => {
-		// selectBtn.style.opacity = "100%";
-		noteData.style.border = "1px solid rgb(36, 36, 36);";
-		// noteData.setAttribute("style", "border: 1px solid rgb(36, 36, 36); border-radius: 9px;");
-	});
 
 	editBtn.addEventListener('click', (e) => {
 		const el = editWindow(title, text, id, noteEL, dateNote, colorSkin);

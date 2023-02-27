@@ -15,15 +15,20 @@
 	/* border-radius: 9px; */
 
 }
-.selected{
+#selected{
 	display: none;
-	/* opacity: 0%; */
 	position: absolute;
 	top: -10px;
 	left: -10px;
+	cursor: pointer;
+	/* opacity: 0%; */
 	/* border: 2px solid rgb(184, 184, 184);
 	border-radius: 100%; */
 }
+/* .selected:hover{
+	border: 2px solid rgb(184, 184, 184);
+	border-radius: 100%;
+} */
 
 .note-data{
 	display: flex;
@@ -31,7 +36,7 @@
 	justify-content: space-between;
 	background-color: rgb(255, 255, 255);
 	/* border: 1px solid rgb(184, 184, 184); */
-	padding: 15px;
+	padding: 10px;
 	min-height: 220px;
 	width: 280px;
 	border-radius: 8px;
@@ -42,7 +47,6 @@
 }
 
 .note-header{
-	
 	display: flex;
 	justify-content: space-between;
 	font-weight: 900;
